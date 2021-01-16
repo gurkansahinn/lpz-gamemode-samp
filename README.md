@@ -4,7 +4,7 @@ Last Project Z - Gamemode
 
 # .env file example
 
-'''
+```
 SERVER_NAME=
 SERVER_MODE=
 SERVER_MAP=
@@ -20,4 +20,4 @@ GAME_DATABASE_PASSWORD=
 REDIS_HOST=
 REDIS_PORT=
 REDIS_AUTH=
-'''
+```
