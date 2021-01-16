@@ -8,5 +8,5 @@
 hook OnGameModeInit()
 {
     LoadServerData();
-    return 1;
+    ConfigureServerDefaults();
 }

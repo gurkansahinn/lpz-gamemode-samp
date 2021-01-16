@@ -1,0 +1,55 @@
+#define COLOUR_WHITE						0xFFFFFFFF
+#define EMBED_WHITE							"{FFFFFF}"
+#define COLOUR_BLACK 						0x00000000
+#define EMBED_BLACK 						"{000000}"
+#define COLOUR_TOMATO						0xFF6347FF
+#define EMBED_TOMATO						"{FF6347}"
+#define COLOUR_GOLD							0xFFD700FF
+#define EMBED_GOLD							"{FFD700}"
+#define COLOUR_EASTSIDE		   	 			0xBEA1D3FF
+#define EMBED_EASTSIDE						"{BEA1D3}"
+#define COLOUR_PASTELGREEN					0x90EE90FF
+#define EMBED_PASTELGREEN					"{90EE90}"
+#define COLOUR_GRAY							0xd6d6d6FF
+#define EMBED_GRAY 							"{d6d6d6}"
+#define COLOUR_TURBO            			0xF0F000FF
+#define EMBED_TURBO	            			"{F0F000}"
+#define COLOUR_TULIPTREE	        		0xE5C43EFF
+#define EMBED_TULIPTREE	        			"{E5C43E}"
+#define COLOUR_BRIGHTRED 					0xAA0000FF
+#define EMBED_BRIGHTRED 					"{AA0000}"
+#define COLOUR_HIGHLAND						0x669966FF
+#define COLOUR_JAPANLAUREL					0x00AA00FF
+#define EMBED_JAPANLAUREL					"{00AA00}"
+#define COLOUR_LONESTAR						0x660000FF
+#define COLOUR_BAHAMABLUE 					0x006699FF
+#define EMBED_BAHAMABLUE 					"{006699}"
+#define COLOUR_NAVYBLUE						0x000066FF
+#define COLOUR_TUATARA 						0x3D3C3AFF
+#define COLOUR_REGENTSTBLUE					0xA9C4E4FF
+#define COLOUR_MINDARO	 					0xCBF873FF
+#define COLOUR_MERCURY 						0xE5E5E5FF // aka: COLOUR_FADE_1
+#define EMBED_MERCURY 						"{E5E5E5}"
+#define COLOUR_SILVER 						0xCCCCCCFF // aka: COLOUR_FADE_2
+#define EMBED_SILVER 						"{CCCCCC}"
+#define COLOUR_NOBEL 						0xB3B3B3FF // aka: COLOUR_FADE_3
+#define COLOUR_DUSTYGRAY 					0x999999FF // aka: COLOUR_FADE_4
+#define COLOUR_CITRINEWHITE 				0xF9F4CDFF
+#define COLOUR_DANDELION 					0xFED85DFF
+#define EMBED_DANDELION 					"{FED85D}"
+#define COLOUR_ORCHID 						0xDD66DDFF
+#define EMBED_ORCHID	 					"{DD66DD}"
+#define COLOUR_MALIBU 						0x8D8DFFFF
+#define COLOUR_APPLE 						0x33AA33FF
+#define COLOUR_BROOM 						0xFFFF15FF
+#define EMBED_BROOM 						"{FFFF15}"
+#define COLOUR_FUCHSIABLUE					0x8040BFFF
+#define EMBED_FUCHSIABLUE 					"{8040BF}"
+#define COLOUR_COPBLUE 						0x3333FFFF
+#define COLOUR_PRIMROSE 					0xF0F2A5FF
+#define EMBED_ORANGE						"{fea75d}"
+#define COLOUR_ORANGE						0xfea75dFF
+#define EMBED_GREY							"{E5E5E5}"
+#define EMBED_TURQUOISE						"{9FA8C7}"
+#define EMBED_HELPER                        "{7FF0BD}"
+#define EMBED_ADMIN                         "{E89977}"

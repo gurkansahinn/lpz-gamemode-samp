@@ -11,8 +11,10 @@
 		"pawn-lang/YSI-Includes:v5.4.102",
 		"pawn-lang/sa-mp-fixes",
 		"dakyskye/pawn-env:1.1.1",
-		"pBlueG/SA-MP-MySQL:R41-4",
-		"oscar-broman/strlib"
+		"oscar-broman/strlib",
+		"karimcambridge/samp-foreach:v19.1",
+		"samp-incognito/samp-streamer-plugin:v2.9.4",
+		"pBlueG/SA-MP-MySQL:R41-4"
 	],
 	"local": true,
 	"runtime": {
@@ -24,7 +26,7 @@
 		"maxplayers": 50,
 		"language": "",
 		"mapname": "San Andreas",
-		"weburl": "www.amper.com",
+		"weburl": "www.lastprojectz.com",
 		"gamemodetext": "Unknown",
 		"announce": true,
 		"lanmode": true,

@@ -18,5 +18,24 @@ stock LoadServerData()
     SendRconCommand(sprintf("weburl %s", serverUrl));
     SendRconCommand(sprintf("language %s", serverLanguage));
     SendRconCommand(sprintf("password %s", serverPassword));
+
+    return 1;
+}
+
+stock ConfigureServerDefaults()
+{
+    SetNameTagDrawDistance(15.0);
+    ShowPlayerMarkers(PLAYER_MARKERS_MODE_OFF);
+    DisableInteriorEnterExits();
+    ManualVehicleEngineAndLights();
+    EnableStuntBonusForAll(false);
+
+    Streamer_TickRate(60);
+    Streamer_SetVisibleItems(STREAMER_TYPE_OBJECT, 1000);
+    Streamer_SetVisibleItems(STREAMER_TYPE_ACTOR, 1024);
+    Streamer_ToggleChunkStream(1);
+    Streamer_ToggleErrorCallback(1);
+
+    print("Server defaults configured.");
     return 1;
 }
