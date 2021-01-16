@@ -1,11 +1,18 @@
 {
 	"user": "lilAmper",
 	"repo": "zombie-project",
-	"entry": "gamemodes\\main.pwn",
-	"output": "gamemodes\\main.amx",
+	"entry": "gamemodes/main.pwn",
+	"output": "gamemodes/main.amx",
 	"dependencies": [
+		"Zeex/samp-plugin-crashdetect:v4.20",
 		"sampctl/samp-stdlib",
-		"BigETI/pawn-vector"
+		"BigETI/pawn-vector",
+		"Southclaws/pawn-redis:1.1.2",
+		"pawn-lang/YSI-Includes:v5.4.102",
+		"pawn-lang/sa-mp-fixes",
+		"dakyskye/pawn-env:1.1.1",
+		"pBlueG/SA-MP-MySQL:R41-4",
+		"oscar-broman/strlib"
 	],
 	"local": true,
 	"runtime": {
