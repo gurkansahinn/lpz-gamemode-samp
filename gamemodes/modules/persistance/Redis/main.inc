@@ -1,5 +1,3 @@
-// persistance > Redis > main
-
 #include <YSI_CODING\y_hooks>
 
 #include <persistance/Redis/globals>

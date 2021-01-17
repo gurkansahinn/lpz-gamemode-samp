@@ -1,5 +1,3 @@
-// persistance > Redis > globals
-
 new Redis:redisClient;
 
 #define ENV_REDIS_HOST "REDIS_HOST"

@@ -1,5 +1,3 @@
-// persistance > MySQL > Game > globals
-
 new MySQL:mysqlGame;
 
 #define ENV_GAME_DATABASE_HOST "GAME_DATABASE_HOST"

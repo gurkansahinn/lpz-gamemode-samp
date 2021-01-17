@@ -1,5 +1,3 @@
-// persistance > Redis > functions
-
 stock ConnectRedisServer()
 {
     new redisHost[MAX_REDIS_HOST_LENGTH], redisPort[MAX_REDIS_PORT_LENGTH], redisAuth[MAX_REDIS_AUTH_LENGTH],

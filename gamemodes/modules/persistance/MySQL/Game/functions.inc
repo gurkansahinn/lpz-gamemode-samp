@@ -1,5 +1,3 @@
-// persistance > MySQL > Game > functions
-
 stock ConnectGameDatabase()
 {
     new gameDatabaseHost[MAX_GAME_DATABASE_HOST_LENGTH], gameDatabaseUser[MAX_GAME_DATABASE_USER_LENGTH], gameDatabaseDB[MAX_GAME_DATABASE_DB_LENGTH],

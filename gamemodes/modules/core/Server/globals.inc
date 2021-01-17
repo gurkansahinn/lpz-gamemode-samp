@@ -1,5 +1,3 @@
-// core > Server > globals
-
 // Server Data
 
 #define ENV_SERVER_NAME "SERVER_NAME"
