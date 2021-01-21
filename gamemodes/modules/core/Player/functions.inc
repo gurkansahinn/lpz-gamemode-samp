@@ -1,3 +1,58 @@
+/*
+
+    Account Model
+
+*/
+
+stock CheckPlayerAccount(playerid)
+{
+    mysql_tquery(mysqlG, GetAccountData(.fields = "accounts.account_id, accounts.account_forum_id, accounts.account_name, accounts.account_password", .forumId = strval(GetName(playerid))), "OnPlayerRetrieveAccount", "d", playerid);
+    return 1;
+}
+
+stock GetAccountData(const fields[] = "accounts.*", const joins[] = "", const wheres[] = "", page = 1, limit = -1, accountId = -1, forumId = -1, const accountName[] = "")
+{
+    new query[512];
+
+    format(query, sizeof(query), "SELECT %s FROM accounts", fields);
+
+    if(!isnull(joins))
+    {
+        format(query, sizeof(query), "%s %s", query, joins);
+    }
+
+    format(query, sizeof(query), "%s WHERE 1", query);
+
+    if(accountId != -1)
+    {
+        mysql_format(mysqlG, query, sizeof(query), "%s AND accounts.account_id = '%d'", query, accountId);
+    }
+
+    if(forumId != -1)
+    {
+        mysql_format(mysqlG, query, sizeof(query), "%s AND accounts.account_forum_id = '%d'", query, forumId);
+    }
+
+    if(!isnull(accountName))
+    {
+        mysql_format(mysqlG, query, sizeof(query), "%s AND `accounts.account_name` = '%s'", query, accountName);
+    }
+
+    if(!isnull(wheres))
+    {
+        format(query, sizeof(query), "%s AND %s", query, wheres);
+    }
+
+    mysql_format(mysqlG, query, sizeof(query), "%s ORDER BY accounts.account_id DESC", query);
+
+    if(limit == -1)
+        mysql_format(mysqlG, query, sizeof(query), "%s LIMIT %d, 10000", query, ((page - 1) * ITEM_PER_PAGE));
+    else
+        mysql_format(mysqlG, query, sizeof(query), "%s LIMIT %d, 1", query, ((page - 1) * ITEM_PER_PAGE) + limit);
+
+    return query;
+}
+
 stock ResetPVariables(playerid)
 {
 	AccountInfo[playerid][pID] = 0;
@@ -13,7 +68,7 @@ stock ResetPVariables(playerid)
     return 1;
 }
 
-stock ServerMessage(playerid, message[])
+stock ServerMessage(playerid, const message[])
 {
     if(strlen(message) > 96)
     {
@@ -29,7 +84,7 @@ stock ServerMessage(playerid, message[])
     return 1;
 }
 
-stock UsageMessage(playerid, message[])
+stock UsageMessage(playerid, const message[])
 {
     if(strlen(message) > 96)
     {
@@ -45,7 +100,7 @@ stock UsageMessage(playerid, message[])
     return 1;
 }
 
-stock OptionMessage(playerid, message[])
+stock OptionMessage(playerid, const message[])
 {
     if(strlen(message) > 96)
     {
@@ -135,8 +190,7 @@ stock KickEx(playerid, const reason[] = "")
         ErrorMessage(playerid, reason);
     }
 
-    SetTimerEx("KickTimer", 1000, false, "d", playerid);
-
+    defer KickPlayer(playerid);
     return 1;
 }
 
@@ -182,21 +236,23 @@ stock SetVehicleBitParamsEx(vehicleid, parameters)
     return SetVehicleParamsEx(vehicleid, engine, lights, alarm, doors, bonnet, boot, objective);
 }
 
-stock PlayerHasState(playerid, stateflag)
+// Character State Flags
+stock CharacterHasState(playerid, stateflag)
 {
     return (CharacterInfo[playerid][cStateFlags] & stateflag) == stateflag;
 }
 
-stock SetPlayerState(playerid, stateflag)
+stock SetCharacterState(playerid, stateflag)
 {
     return BitFlag_On(CharacterInfo[playerid][cStateFlags], stateflag);
 }
 
-stock RemovePlayerState(playerid, stateflag)
+stock RemoveCharacterState(playerid, stateflag)
 {
     return BitFlag_Off(CharacterInfo[playerid][cStateFlags], stateflag);
 }
 
+// Account State Flags
 stock PlayerAccountHasState(playerid, stateflag)
 {
     return (AccountInfo[playerid][pStateFlags] & stateflag) == stateflag;
@@ -212,6 +268,7 @@ stock RemovePlayerAccountState(playerid, stateflag)
     return BitFlag_Off(AccountInfo[playerid][pStateFlags], stateflag);
 }
 
+// Staff State Flags
 stock StaffHasState(playerid, stateflag)
 {
     return (StaffInfo[playerid][sStaffFlags] & stateflag) == stateflag;
@@ -227,6 +284,7 @@ stock RemoveStaffState(playerid, stateflag)
     return BitFlag_Off(StaffInfo[playerid][sStaffFlags], stateflag);
 }
 
+// Staff Role Flags
 stock StaffHasRole(playerid, stateflag)
 {
     return (AccountInfo[playerid][pStaffRoles] & stateflag) == stateflag;
@@ -262,6 +320,16 @@ stock GetName(playerid, underscore = 1)
         }
     }
     return name;
+}
+
+stock ClearChat(playerid, lines = 20)
+{
+    for(new i = 0; i < lines; i++)
+    {
+        SendClientMessage(playerid, -1, "");
+    }
+
+    return 1;
 }
 
 stock ProxDetector(Float:radius, playerid, const message[], col1, col2, col3, col4, col5, isplayerwillgetmessage = 1)
@@ -307,4 +375,35 @@ stock ListPlayerStaffRoles(playerid)
         roleList = "Oyuncu";
 
     return roleList;
+}
+
+ShowLoginDialog(playerid)
+{
+    inline Response(pid, dialogid, response, listitem, string:text[])
+    {
+        #pragma unused listitem, dialogid, pid, text
+
+        if(!response)
+        {
+            KickEx(playerid, "Oyundan çýkýþ yapmaya karar verdiniz.");
+            return false;
+        }
+
+        SHA256_PassHash(text, GetName(playerid), text, sizeof(text));
+        printf("%s", text);
+        if(!strcmp(text, AccountInfo[playerid][pPassword]))
+        {
+            ServerMessage(playerid, "Ýþlem baþarýlý karakter giriþ yapma ekraný hazýrlanýyor.");
+            return true;
+        }
+        else
+        {
+            ServerMessage(playerid, "Hatalý þifre girdiniz. Tekrar deneyin.");
+            ShowLoginDialog(playerid);
+            return false;
+        }
+    }
+
+    Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_PASSWORD, sprintf("%s - Giriþ Yap", GetName(playerid)), "Kullanýcý paneli üzerinden belirlediðin þifren ile giriþ yapabilirsin.\nGiriþ yapabilmek için 60 saniyen bulunuyor.", "Giriþ Yap", "Çýkýþ Yap");
+    return true;
 }

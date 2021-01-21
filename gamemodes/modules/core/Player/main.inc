@@ -1,8 +1,10 @@
 #include <core/Player/globals>
 #include <core/Player/clouds>
 #include <core/Player/colours>
+#include <core/Player/timers>
 #include <core/Player/functions>
 #include <core/Player/commands>
+#include <core/Player/header>
 #include <core/Player/callbacks>
 
 hook OnPlayerConnect(playerid)
@@ -19,15 +21,29 @@ hook OnPlayerConnect(playerid)
 
 hook OnPlayerRequestClass(playerid, classid)
 {
-/*     new query[];
-
-    mysql_format(mysqlC, query, sizeof(query), "");
-
-    mysql_format(mysqlC, query, sizeof(query), "SELECT accounts.account_id, accounts.account_name, accounts.account_staff_roles, accounts.account_staff_flags, accounts.account_state_flags FULL JOIN")
- */
+    ClearChat(playerid);
+    CheckPlayerAccount(playerid);
 }
 
 hook OnPlayerText(playerid, text[])
 {
 	ProxDetector(15.0, playerid, sprintf("%s: %s", GetName(playerid, 0), text), 0xD6D6D6FF, COLOUR_MERCURY, COLOUR_SILVER, COLOUR_NOBEL, COLOUR_DUSTYGRAY);
+}
+
+hook OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
+{
+    if(newkeys == KEY_NO)
+    {
+        if(CharacterInfo[playerid][cMovementState] == CHARACTER_MOVE_STATE_WALK)
+        {
+            ApplyAnimation(playerid, "PED", "PLAYER_SNEAK", 4.1, 1, 1, 1, 1, 1);
+            CharacterInfo[playerid][cMovementState] = CHARACTER_MOVE_STATE_SLOW;
+        }
+        else
+        {
+            ClearAnimations(playerid, 1);
+            CharacterInfo[playerid][cMovementState] = CHARACTER_MOVE_STATE_WALK;
+        }
+    }    
+    return 1;
 }

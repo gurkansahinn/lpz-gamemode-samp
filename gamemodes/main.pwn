@@ -6,13 +6,22 @@
 #include <fixes>
 
 // YSI
+#define YSI_YES_MODE_CACHE
+#define YSI_NO_OPTIMISATION_MESSAGE
+#define YSI_NO_HEAP_MALLOC
+
+#include <YSI_Visual\y_dialog>
+#include <YSI_CODING\y_timers>
+#include <YSI_Visual\y_commands>
 #include <YSI_CODING\y_hooks>
 #include <YSI_Data\y_iterate>
 
 // Persistance Includes
 #include <a_mysql>
-#include <websockets>
+#include <socket>
 #include <redis>
+
+//#include <websockets>
 
 // Others
 #include <colandreas>
@@ -21,36 +30,32 @@
 #include <strlib>
 #include <env>
 #include <vector>
+#include <sscanf2>
 #include <streamer>
 
 // Main Globals
 #include <globals>
-
-// Core Modules
-#include <core/Server/main>
-#include <core/Player/main>
 
 // Persistance Modules
 #include <persistance/MySQL/main>
 #include <persistance/Redis/main>
 //#include <persistance/WebSocket/main>
 
+// Core Modules
+#include <core/Server/main>
+#include <core/Player/main>
+
+// Maps
+#include <world/map/main>
+
 main() {
-    SendRconCommand("hostname L A S T P R O J E C T Z");
-    SendRconCommand(sprintf("password %dLOADING", random(9999999)));
 }
 
-public OnGameModeInit()
+public OnPlayerRequestClass(playerid, classid)
 {
-	return 1;
-}
+    SetSpawnInfo(playerid, NO_TEAM, 95, 3191.943,385.393,22.547, 90.0, 0, 0, 0, 0, 0, 0);
+    SpawnPlayer(playerid);
 
-public OnPlayerConnect(playerid)
-{
+    TogglePlayerSpectating(playerid, true);
     return 1;
-}
-
-public OnPlayerText(playerid, text[])
-{
-    return 0;
 }

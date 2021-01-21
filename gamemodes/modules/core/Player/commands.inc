@@ -1,3 +1,56 @@
+public e_COMMAND_ERRORS:OnPlayerCommandReceived(playerid, cmdtext[], e_COMMAND_ERRORS:success){
+
+    switch (success) 
+    { 
+        case COMMAND_UNDEFINED: 
+        { 
+            ErrorMessage(playerid, "Böyle bir komut bulunamadý.");
+        } 
+    }
+
+    return COMMAND_OK;
+}
+
+CMD:gotopos(playerid, params[])
+{
+	new Float:newX, Float:newY, Float:newZ;
+
+	if(sscanf(params, "fff", newX, newY, newZ))
+		return UsageMessage(playerid, "/gotopos [x] [y] [z]");
+
+	SetPlayerPos(playerid, newX, newY, newZ);
+	ServerMessage(playerid, "Belirttiðiniz pozisyona teleport oldunuz.");
+	return 1;
+}
+
+CMD:x(playerid, params[])
+{
+	new Float:plusX;
+
+	if(sscanf(params, "f", plusX))
+		return UsageMessage(playerid, "/x [x]");
+	
+	new Float:pX, Float:pY, Float:pZ;
+	GetPlayerPos(playerid, pX, pY, pZ);
+
+	SetPlayerPos(playerid, pX+plusX, pY, pZ);
+	return 1;
+}
+
+CMD:z(playerid, params[])
+{
+	new Float:plusZ;
+
+	if(sscanf(params, "f", plusZ))
+		return UsageMessage(playerid, "/z [z]");
+	
+	new Float:pX, Float:pY, Float:pZ;
+	GetPlayerPos(playerid, pX, pY, pZ);
+
+	SetPlayerPos(playerid, pX, pY, pZ+plusZ);
+	return 1;
+}
+
 /* CMD:ekip(playerid)
 {
 	new bool:found = false;

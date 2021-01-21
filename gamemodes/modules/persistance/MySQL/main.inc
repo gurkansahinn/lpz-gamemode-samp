@@ -7,6 +7,7 @@
 
 // Game Database
 #include <persistance/MySQL/Game/globals>
+#include <persistance/MySQL/Game/clouds>
 #include <persistance/MySQL/Game/functions>
 
 hook OnGameModeInit()

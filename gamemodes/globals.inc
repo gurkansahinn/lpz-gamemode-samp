@@ -1,3 +1,5 @@
+#define ITEM_PER_PAGE (20)
+
 #define BitFlag_Get(%0,%1) ((%0) & (%1))   	// Returns zero (false) if the flag isn't set.
 #define BitFlag_On(%0,%1) ((%0) |= (%1))  	// Turn on a flag.
 #define BitFlag_Off(%0,%1) ((%0) &= ~(%1)) 	// Turn off a flag.

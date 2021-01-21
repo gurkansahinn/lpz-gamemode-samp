@@ -1,0 +1,45 @@
+AddCharModel(305, 20001, "lvpdpc2.dff", "lvpdpc2.txd");
+AddCharModel(305, 20002, "lapdpd2.dff", "lapdpd2.txd");
+AddSimpleModel(-1,19379, -2000, "wallzzz.dff", "wallzzz.txd");
+
+AddSimpleModel(-1,19379, -2050, "1ada.dff", "1ada.txd");
+AddSimpleModel(-1,19379, -2051, "2ada.dff", "1ada.txd");
+AddSimpleModel(-1,19379, -2052, "3ada.dff", "1ada.txd");
+
+AddSimpleModel(-1,19379, -2200, "1adacim1.dff", "1adacim1.txd");
+
+AddSimpleModel(-1,19379, -2300, "yoldekor1.dff", "yoldekor1.txd");
+AddSimpleModel(-1,19379, -2301, "yoldekor2.dff", "yoldekor2.txd");
+AddSimpleModel(-1,19379, -2302, "yoldekor3.dff", "yoldekor3.txd");
+AddSimpleModel(-1,19379, -2303, "agac1.dff", "agac1.txd");
+AddSimpleModel(-1,19379, -2304, "agac2.dff", "agac2.txd");
+AddSimpleModel(-1,19379, -2305, "agac3.dff", "agac3.txd");
+AddSimpleModel(-1,19379, -2306, "agac4.dff", "agac4.txd");
+AddSimpleModel(-1,19379, -2307, "agac5.dff", "agac5.txd");
+AddSimpleModel(-1,19379, -2308, "carboz1.dff", "carboz1.txd");
+AddSimpleModel(-1,19379, -2309, "carboz2.dff", "carboz2.txd");
+AddSimpleModel(-1,19379, -2310, "carboz3.dff", "carboz3.txd");
+AddSimpleModel(-1,19379, -2311, "carboz4.dff", "carboz4.txd");
+AddSimpleModel(-1,19379, -2313, "carboz6.dff", "carboz6.txd");
+AddSimpleModel(-1,19379, -2314, "carboz7.dff", "carboz7.txd");
+AddSimpleModel(-1,19379, -2315, "carboz8.dff", "carboz8.txd");
+AddSimpleModel(-1,19379, -2316, "carboz9.dff", "carboz9.txd");
+AddSimpleModel(-1,19379, -2317, "carboz10.dff", "carboz10.txd");
+AddSimpleModel(-1,19379, -2318, "carboz11.dff", "carboz11.txd");
+AddSimpleModel(-1,19379, -2319, "carboz12.dff", "carboz12.txd");
+AddSimpleModel(-1,19379, -2320, "carboz13.dff", "carboz13.txd");
+
+
+AddSimpleModel(-1,19379, -5701, "sahne1.dff", "sahne1.txd");
+AddSimpleModel(-1,19379, -5702, "obsahne1.dff", "obsahne1.txd");
+AddSimpleModel(-1,19379, -5703, "1tel.dff", "1tel.txd");
+AddSimpleModel(-1,19379, -5704, "1logo.dff", "1logo.txd");
+AddSimpleModel(-1,19379, -5705, "4evler1.dff", "4evler.txd");
+AddSimpleModel(-1,19379, -5706, "1olumob.dff", "1olumob.txd");
+AddSimpleModel(-1,19379, -5707, "1tel2.dff", "1tel.txd");
+AddSimpleModel(-1,19379, -5708, "1kule.dff", "1kule.txd");
+AddSimpleModel(-1,19379, -5709, "sahne2.dff", "sahne1.txd");
+AddSimpleModel(-1,19379, -5710, "1tel3.dff", "1tel.txd");
+AddSimpleModel(-1,19379, -5711, "sahne2duvar.dff", "sahne2duvar.txd");
+AddSimpleModel(-1,19379, -5712, "sahne3.dff", "sahne3.txd");
+

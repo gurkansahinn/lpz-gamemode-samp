@@ -1,19 +1,25 @@
+// Account
+
 enum E_Account {
 	pID,
+    pForumID,
     bool:pLogged,
 	pName[MAX_USER_NAME_LENGHT],
+    pPassword[MAX_ACCOUNT_PASSWORD_LENGHT],
 	pStateFlags,
     pStaffRoles
 }
 
 new AccountInfo[MAX_PLAYERS][E_Account];
 
+// State Flags
 enum(<<=1)
 {
 	ACCOUNT_HASLOGGED = 1,
     ACCOUNT_BANNED
 }
 
+// Command Roles
 enum(<<=1)
 {
     CMD_DEVELOPER = 1,
@@ -25,6 +31,32 @@ enum(<<=1)
     CMD_POLICE
 }
 
+// Character
+enum E_Character {
+    cID,
+    cStateFlags,
+    cMovementState
+}
+
+new CharacterInfo[MAX_PLAYERS][E_Character];
+
+// Staff
+enum E_Staff {
+    sStaffFlags,
+    sSpecID,
+    sSpecType,
+    bool:sSpec,
+    Float:sSpecX,
+    Float:sSpecY,
+    Float:sSpecZ,
+    Float:sSpecA,
+    sSpecInterior,
+    sSpecWorld
+}
+
+new StaffInfo[MAX_PLAYERS][E_Staff];
+
+// Staff Roles
 enum(<<=1)
 {
     psr_Dev = 1,
@@ -35,6 +67,7 @@ enum(<<=1)
     psr_Helper
 }
 
+// Staff Flags
 enum(<<=1)
 {
     STAFF_STATE_HIDDEN = 1,
@@ -51,24 +84,3 @@ new PlayerStaffRoles[][] =
     "Game Admin",
     "Helper"
 };
-
-enum E_Character {
-    cID
-}
-
-new CharacterInfo[MAX_PLAYERS][E_Character];
-
-enum E_Staff {
-    sStaffFlags,
-    sSpecID,
-    sSpecType,
-    bool:sSpec,
-    Float:sSpecX,
-    Float:sSpecY,
-    Float:sSpecZ,
-    Float:sSpecA,
-    sSpecInterior,
-    sSpecWorld
-}
-
-new StaffInfo[MAX_PLAYERS][E_Staff];

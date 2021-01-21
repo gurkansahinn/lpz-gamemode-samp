@@ -16,9 +16,9 @@ stock ConnectGameDatabase()
     mysql_set_option(mysql_options, POOL_SIZE, 3);
     mysql_set_option(mysql_options, SERVER_PORT, 3306);
 
-    mysqlGame = mysql_connect(gameDatabaseHost, gameDatabaseUser, gameDatabasePassword, gameDatabaseDB, mysql_options);
+    mysqlG = mysql_connect(gameDatabaseHost, gameDatabaseUser, gameDatabasePassword, gameDatabaseDB, mysql_options);
 
-    if(mysqlGame == MYSQL_INVALID_HANDLE || mysql_errno(mysqlGame) != 0)
+    if(mysqlG == MYSQL_INVALID_HANDLE || mysql_errno(mysqlG) != 0)
     {
         print("[!] Connection to MySQL server failed.");
         return 0;

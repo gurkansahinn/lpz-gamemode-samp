@@ -1,5 +1,3 @@
-// core > Server > functions
-
 stock LoadServerData()
 {
     new serverName[MAX_SERVER_NAME_LENGTH], serverMode[MAX_SERVER_MODE_LENGTH], serverMap[MAX_SERVER_MAP_LENGTH], serverUrl[MAX_SERVER_URL_LENGTH], 
