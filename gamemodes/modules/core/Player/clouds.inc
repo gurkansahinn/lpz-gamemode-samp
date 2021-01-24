@@ -7,7 +7,9 @@ enum E_Account {
 	pName[MAX_USER_NAME_LENGHT],
     pPassword[MAX_ACCOUNT_PASSWORD_LENGHT],
 	pStateFlags,
-    pStaffRoles
+    pStaffRoles,
+
+    pCharacterPanelPage
 }
 
 new AccountInfo[MAX_PLAYERS][E_Account];
@@ -39,6 +41,14 @@ enum E_Character {
 }
 
 new CharacterInfo[MAX_PLAYERS][E_Character];
+
+enum E_CharacterPanel {
+    cSqlID,
+    cName[MAX_PLAYER_NAME],
+    cSkin
+}
+
+new CharacterPanelInfo[MAX_PLAYERS][CHARACTER_PER_PAGE][E_CharacterPanel];
 
 // Staff
 enum E_Staff {

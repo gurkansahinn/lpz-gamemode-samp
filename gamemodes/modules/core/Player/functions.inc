@@ -6,7 +6,7 @@
 
 stock CheckPlayerAccount(playerid)
 {
-    mysql_tquery(mysqlG, GetAccountData(.fields = "accounts.account_id, accounts.account_forum_id, accounts.account_name, accounts.account_password", .forumId = strval(GetName(playerid))), "OnPlayerRetrieveAccount", "d", playerid);
+    mysql_tquery(mysqlG, GetAccountData(.fields = "accounts.account_id, accounts.account_forum_id, accounts.account_name, accounts.account_password", .forumId = strval(GetName(playerid))), "OnPlayerReceivedAccount", "d", playerid);
     return 1;
 }
 
@@ -53,6 +53,55 @@ stock GetAccountData(const fields[] = "accounts.*", const joins[] = "", const wh
     return query;
 }
 
+/*
+
+    CharcaterModel
+
+*/
+
+stock GetCharacterData(const fields[] = "characters.*", const joins[] = "", const wheres[] = "", page = 1, limit = -1, accountId = -1, characterId = -1, const characterName[] = "")
+{
+    new query[512];
+
+    format(query, sizeof(query), "SELECT %s FROM characters", fields);
+
+    if(!isnull(joins))
+    {
+        format(query, sizeof(query), "%s %s", query, joins);
+    }
+
+    format(query, sizeof(query), "%s WHERE 1", query);
+
+    if(accountId != -1)
+    {
+        mysql_format(mysqlG, query, sizeof(query), "%s AND characters.character_account_id = '%d'", query, accountId);
+    }
+
+    if(characterId != -1)
+    {
+        mysql_format(mysqlG, query, sizeof(query), "%s AND characters.character_id = '%d'", query, characterId);
+    }
+
+    if(!isnull(characterName))
+    {
+        mysql_format(mysqlG, query, sizeof(query), "%s AND `characters.character_name` = '%s'", query, characterName);
+    }
+
+    if(!isnull(wheres))
+    {
+        format(query, sizeof(query), "%s AND %s", query, wheres);
+    }
+
+    //mysql_format(mysqlG, query, sizeof(query), "%s ORDER BY characters.character_id DESC", query);
+
+    if(limit == -1)
+        mysql_format(mysqlG, query, sizeof(query), "%s LIMIT %d, 10000", query, ((page - 1) * CHARACTER_PER_PAGE));
+    else
+        mysql_format(mysqlG, query, sizeof(query), "%s LIMIT %d, 1", query, ((page - 1) * CHARACTER_PER_PAGE) + limit);
+
+    return query;
+}
+
 stock ResetPVariables(playerid)
 {
 	AccountInfo[playerid][pID] = 0;
@@ -60,6 +109,15 @@ stock ResetPVariables(playerid)
 	AccountInfo[playerid][pName] = EOS;
 	AccountInfo[playerid][pStateFlags] = 0;
     AccountInfo[playerid][pStaffRoles] = 0;
+
+    AccountInfo[playerid][pCharacterPanelPage] = 1;
+
+    for(new characterPanelArray = 0; characterPanelArray < CHARACTER_PER_PAGE; characterPanelArray++)
+    {
+        CharacterPanelInfo[playerid][characterPanelArray][cSqlID] = 0;
+        CharacterPanelInfo[playerid][characterPanelArray][cName] = EOS;
+        CharacterPanelInfo[playerid][characterPanelArray][cSkin] = INVALID_CHARACTER_SKIN;
+    }
 
     CharacterInfo[playerid][cID] = 0;
 
@@ -377,7 +435,7 @@ stock ListPlayerStaffRoles(playerid)
     return roleList;
 }
 
-ShowLoginDialog(playerid)
+stock ShowLoginDialog(playerid)
 {
     inline Response(pid, dialogid, response, listitem, string:text[])
     {
@@ -389,11 +447,22 @@ ShowLoginDialog(playerid)
             return false;
         }
 
-        SHA256_PassHash(text, GetName(playerid), text, sizeof(text));
-        printf("%s", text);
+        SHA256_PassHash(text, AccountInfo[playerid][pName], text, sizeof(text));
         if(!strcmp(text, AccountInfo[playerid][pPassword]))
         {
+            /*new List:skins = list_new();
+
+            AddModelMenuItem(skins, 0);
+            AddModelMenuItem(skins, 1);
+            AddModelMenuItem(skins, 29, "Cool people aka wiggy only");
+            AddModelMenuItem(skins, 60);
+
+            ShowModelSelectionMenu(playerid, "Skinler", MODEL_SELECTION_SKIN_MENU, skins);*/
+
             ServerMessage(playerid, "Ýþlem baþarýlý karakter giriþ yapma ekraný hazýrlanýyor.");
+            
+            mysql_tquery(mysqlG, GetCharacterData(.fields = "characters.character_id, characters.character_name, characters.character_skin", .page = AccountInfo[playerid][pCharacterPanelPage], .accountId = AccountInfo[playerid][pID]), "OnPlayerReceivedCharacters", "d", playerid);
+
             return true;
         }
         else
@@ -404,6 +473,6 @@ ShowLoginDialog(playerid)
         }
     }
 
-    Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_PASSWORD, sprintf("%s - Giriþ Yap", GetName(playerid)), "Kullanýcý paneli üzerinden belirlediðin þifren ile giriþ yapabilirsin.\nGiriþ yapabilmek için 60 saniyen bulunuyor.", "Giriþ Yap", "Çýkýþ Yap");
+    Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_PASSWORD, sprintf("%s - Giriþ Yap", AccountInfo[playerid][pName]), "Kullanýcý paneli üzerinden belirlediðin þifren ile giriþ yapabilirsin.\nGiriþ yaptýðýn zaman karakter bilgilerini görüntüleyeceksin.", "Giriþ Yap", "Çýkýþ Yap");
     return true;
 }

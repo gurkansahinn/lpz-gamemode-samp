@@ -1,5 +1,6 @@
 #include <a_samp>
 #include <crashdetect>
+//#include <TD-Streamer>
 
 #undef MAX_PLAYERS
 #define MAX_PLAYERS (50)
@@ -31,6 +32,8 @@
 #include <env>
 #include <vector>
 #include <sscanf2>
+#include <PawnPlus>
+#include <eSelection>
 #include <streamer>
 
 // Main Globals
@@ -57,5 +60,18 @@ public OnPlayerRequestClass(playerid, classid)
     SpawnPlayer(playerid);
 
     TogglePlayerSpectating(playerid, true);
+    return 1;
+}
+
+public OnModelSelectionResponse(playerid, extraid, index, modelid, response)
+{
+    if(extraid == MODEL_SELECTION_SKIN_MENU)
+    {
+        if(response == MODEL_RESPONSE_SELECT)
+        {
+            ServerMessage(playerid, sprintf("%d'yi seçtin.", modelid));
+            return 1;
+        }
+    }
     return 1;
 }

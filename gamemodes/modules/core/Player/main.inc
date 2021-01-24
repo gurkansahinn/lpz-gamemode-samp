@@ -1,5 +1,8 @@
+#include <YSI_CODING\y_hooks>
+
 #include <core/Player/globals>
 #include <core/Player/clouds>
+#include <core/Player/textdraw>
 #include <core/Player/colours>
 #include <core/Player/timers>
 #include <core/Player/functions>
@@ -17,6 +20,14 @@ hook OnPlayerConnect(playerid)
 			KickEx(playerid, "Uygun olmayan giriþ yaptýðýnýz için sunucudan uzaklaþtýrýlýyorsunuz.");
 		}
 	}
+
+    ResetPVariables(playerid);
+    CreateCharacterPanelTextdraw(playerid);
+}
+
+hook OnPlayerDisconnect(playerid, reason)
+{
+    ResetPVariables(playerid);
 }
 
 hook OnPlayerRequestClass(playerid, classid)
@@ -27,7 +38,7 @@ hook OnPlayerRequestClass(playerid, classid)
 
 hook OnPlayerText(playerid, text[])
 {
-	ProxDetector(15.0, playerid, sprintf("%s: %s", GetName(playerid, 0), text), 0xD6D6D6FF, COLOUR_MERCURY, COLOUR_SILVER, COLOUR_NOBEL, COLOUR_DUSTYGRAY);
+	ProxDetector(15.0, playerid, sprintf("%s: %s", GetName(playerid, 0), text), COLOUR_GRAY, COLOUR_MERCURY, COLOUR_SILVER, COLOUR_NOBEL, COLOUR_DUSTYGRAY);
 }
 
 hook OnPlayerKeyStateChange(playerid, newkeys, oldkeys)

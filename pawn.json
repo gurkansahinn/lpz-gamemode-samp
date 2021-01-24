@@ -4,7 +4,6 @@
 	"entry": "gamemodes/main.pwn",
 	"output": "gamemodes/main.amx",
 	"dependencies": [
-		"Zeex/samp-plugin-crashdetect:v4.20",
 		"sampctl/samp-stdlib",
 		"BigETI/pawn-vector",
 		"Southclaws/pawn-redis:1.1.2",
@@ -18,14 +17,17 @@
 		"oscar-broman/strlib",
 		"AbyssMorgan/3DTryg",
 		"Pottus/ColAndreas:1.5.0",
-		"maddinat0r/sscanf:v2.8.3"
+		"maddinat0r/sscanf:v2.8.3",
+		"IllidanS4/PawnPlus:v1.3.1"
 	],
 	"local": true,
 	"runtime": {
 		"version": "0.3.DL",
 		"mode": "server",
 		"plugins": [
-			"FCNPC-DL"
+			"crashdetect",
+			"FCNPC-DL",
+			"TextdrawStreamer"
 		],
 		"rcon_password": "password",
 		"port": 7777,
@@ -41,7 +43,7 @@
 		"rcon": false,
 		"logqueries": false,
 		"sleep": 5,
-		"maxnpc": 150,
+		"maxnpc": 50,
 		"stream_rate": 1000,
 		"stream_distance": 200,
 		"onfoot_rate": 30,

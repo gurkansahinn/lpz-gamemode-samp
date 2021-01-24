@@ -1,4 +1,4 @@
-public OnPlayerRetrieveAccount(playerid)
+public OnPlayerReceivedAccount(playerid)
 {
     new rows = cache_num_rows();
 
@@ -16,5 +16,24 @@ public OnPlayerRetrieveAccount(playerid)
     {
         KickEx(playerid, "Kullanýcý paneli üzerinden þifreni belirlememiþ veya hiç kayýt olmamýþsýnýz.");
     }
+    return 1;
+}
+
+public OnPlayerReceivedCharacters(playerid)
+{
+    new rows = cache_num_rows();
+
+    if(rows)
+    {
+        for(new character = 0; character < rows; character++)
+        {
+            cache_get_value_index_int(character, 0, CharacterPanelInfo[playerid][character][cSqlID]);
+
+            cache_get_value_index(character, 1, CharacterPanelInfo[playerid][character][cName]);
+            cache_get_value_index_int(character, 2, CharacterPanelInfo[playerid][character][cSkin]);
+        }
+    }
+
+    ShowCharacterPanel(playerid);
     return 1;
 }
