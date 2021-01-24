@@ -465,15 +465,6 @@ stock ShowLoginDialog(playerid)
         printf("%s", text);
         if(!strcmp(text, AccountInfo[playerid][pPassword]))
         {
-            /*new List:skins = list_new();
-
-            AddModelMenuItem(skins, 0);
-            AddModelMenuItem(skins, 1);
-            AddModelMenuItem(skins, 29, "Cool people aka wiggy only");
-            AddModelMenuItem(skins, 60);
-
-            ShowModelSelectionMenu(playerid, "Skinler", MODEL_SELECTION_SKIN_MENU, skins);*/
-
             ServerMessage(playerid, "Ýþlem baþarýlý karakter giriþ yapma ekraný hazýrlanýyor.");
             
             mysql_tquery(mysqlG, GetCharacterData(.fields = "characters.character_id, characters.character_name, characters.character_skin", .page = AccountInfo[playerid][pCharacterPanelPage], .accountId = AccountInfo[playerid][pID]), "OnPlayerReceivedCharacters", "d", playerid);
