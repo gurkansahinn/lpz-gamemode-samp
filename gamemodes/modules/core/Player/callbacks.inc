@@ -1,3 +1,27 @@
+task GlobalSecondTimer[1000]() 
+{
+    foreach(new p : Player)
+    {
+        if(AccountInfo[p][pCameraZoom] > 1)
+        {
+            new Float:x, Float:y, Float:z;
+
+            GetPlayerPos(p, x, y, z);
+
+            AccountInfo[p][pCameraZoom]--;
+
+            SetPlayerCameraPos(p, x, y, z + (25.0 * AccountInfo[p][pCameraZoom]));
+            SetPlayerCameraLookAt(p, x, y, z);
+        }
+        else if(AccountInfo[p][pCameraZoom] == 1)
+        {
+            AccountInfo[p][pCameraZoom] = 0;
+
+            SetCameraBehindPlayer(p);
+        }
+    }
+}
+
 public OnPlayerReceivedAccount(playerid)
 {
     new rows = cache_num_rows();
@@ -42,6 +66,8 @@ public OnPlayerReceivedCharacters(playerid)
 
 public OnPlayerLoadCharacter(playerid)
 {
+    ClearChat(playerid, 20);
+    
     new rows = cache_num_rows();
 
     if(rows)
@@ -68,6 +94,8 @@ public OnPlayerLoadCharacter(playerid)
 
         //SpawnPlayer(playerid);
 
+        SlowCameraMod(playerid);
+
         SetPlayerPos(playerid, CharacterInfo[playerid][cX], CharacterInfo[playerid][cY], CharacterInfo[playerid][cZ]);
         SetPlayerFacingAngle(playerid, CharacterInfo[playerid][cA]);
 
@@ -90,6 +118,8 @@ public OnPlayerLoadCharacter(playerid)
                 PlayerTextDrawHide(playerid, CharacterPanel[playerid][characterPanelTextdraw]);
             }
 
+            CreateCharacterNametag(playerid);
+            UpdateCharacterNametag(playerid);
             CancelSelectTextDraw(playerid);
         }
         else

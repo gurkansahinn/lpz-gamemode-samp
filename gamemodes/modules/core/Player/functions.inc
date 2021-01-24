@@ -111,6 +111,7 @@ stock ResetPVariables(playerid)
     AccountInfo[playerid][pStaffRoles] = 0;
 
     AccountInfo[playerid][pCharacterPanelPage] = 1;
+    AccountInfo[playerid][pCameraZoom] = 0;
 
     for(new characterPanelArray = 0; characterPanelArray < CHARACTER_PER_PAGE; characterPanelArray++)
     {
@@ -458,6 +459,7 @@ stock ShowLoginDialog(playerid)
         }
 
         SHA256_PassHash(text, AccountInfo[playerid][pName], text, sizeof(text));
+        printf("%s", text);
         if(!strcmp(text, AccountInfo[playerid][pPassword]))
         {
             /*new List:skins = list_new();
@@ -490,4 +492,30 @@ stock LoadCharacter(playerid, sqlId)
 {
     mysql_tquery(mysqlG, GetCharacterData(.characterId = sqlId), "OnPlayerLoadCharacter", "d", playerid);
     return 1;
+}
+
+stock SlowCameraMod(playerid)
+{
+    AccountInfo[playerid][pCameraZoom] = 4;
+    SetPlayerCameraPos(playerid, CharacterInfo[playerid][cX], CharacterInfo[playerid][cY], CharacterInfo[playerid][cZ] + (25.0 * AccountInfo[playerid][pCameraZoom]));
+    SetPlayerCameraLookAt(playerid, CharacterInfo[playerid][cX], CharacterInfo[playerid][cY], CharacterInfo[playerid][cZ]);
+}
+
+stock CreateCharacterNametag(playerid)
+{
+	CharacterInfo[playerid][cNametagID] = CreateDynamic3DTextLabel(" ", -1, CharacterInfo[playerid][cX], CharacterInfo[playerid][cY], CharacterInfo[playerid][cZ] + 0.45, NAME_STREAM_DISTANCE, playerid, INVALID_VEHICLE_ID, 1, -1, -1, -1, NAME_STREAM_DISTANCE);
+	CharacterInfo[playerid][cNametagHeight] = 0;
+	return 1;
+}
+
+stock UpdateCharacterNametag(playerid)
+{
+	if(!IsPlayerNPC(playerid))
+	{
+		if(!IsValidDynamic3DTextLabel(CharacterInfo[playerid][cNametagID]))
+			CreateCharacterNametag(playerid);
+
+		UpdateDynamic3DTextLabelText(CharacterInfo[playerid][cNametagID], -1, RemoveUnderscore(CharacterInfo[playerid][cName]));
+	}
+	return 1;
 }

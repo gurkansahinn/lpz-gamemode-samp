@@ -21,6 +21,9 @@ hook OnPlayerConnect(playerid)
 		}
 	}
 
+    Streamer_ToggleCameraUpdate(playerid, 1);
+	Streamer_ToggleIdleUpdate(playerid, 1);
+
     ResetPVariables(playerid);
     CreateCharacterPanelTextdraw(playerid);
 }

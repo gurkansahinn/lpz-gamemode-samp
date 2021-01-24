@@ -52,6 +52,12 @@
 #include <world/map/main>
 
 main() {
+    ShowNameTags(false);
+}
+
+public OnGameModeInit()
+{
+    return 1;
 }
 
 public OnPlayerRequestClass(playerid, classid)

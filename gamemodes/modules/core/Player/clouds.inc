@@ -10,7 +10,9 @@ enum E_Account {
     pStaffRoles,
 
     pCharacterPanelPage,
-    pSelectedCharacter
+    pSelectedCharacter,
+
+    pCameraZoom
 }
 
 new AccountInfo[MAX_PLAYERS][E_Account];
@@ -51,7 +53,10 @@ enum E_Character {
     cWorld,
 
     Float:cHealth,
-    Float:cArmour
+    Float:cArmour,
+
+    Text3D:cNametagID,
+    cNametagHeight
 }
 
 new CharacterInfo[MAX_PLAYERS][E_Character];

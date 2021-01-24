@@ -28,6 +28,8 @@ stock ConfigureServerDefaults()
     ManualVehicleEngineAndLights();
     EnableStuntBonusForAll(false);
 
+    ShowNameTags(false);
+
     Streamer_TickRate(60);
     Streamer_SetVisibleItems(STREAMER_TYPE_OBJECT, 1000);
     Streamer_SetVisibleItems(STREAMER_TYPE_ACTOR, 1024);
