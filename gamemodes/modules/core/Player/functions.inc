@@ -122,6 +122,9 @@ stock ResetPVariables(playerid)
 
     CharacterInfo[playerid][cID] = 0;
 
+    if(IsValidDynamic3DTextLabel(CharacterInfo[playerid][cNametagID]))
+        DestroyDynamic3DTextLabel(CharacterInfo[playerid][cNametagID]);
+
     SetPlayerColor(playerid, COLOUR_GRAY);
 
     return 1;
