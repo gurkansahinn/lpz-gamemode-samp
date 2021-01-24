@@ -58,3 +58,65 @@ hook OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
     }    
     return 1;
 }
+
+public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
+{
+    if(playertextid == CharacterPanel[playerid][38])
+    {
+        new sqlid = AccountInfo[playerid][pSelectedCharacter];
+        if(sqlid == 0)
+        {
+            ErrorMessage(playerid, "Oyunu baþlatmak için bir karakteri seçmelisiniz. Eðer ki bir karakteriniz yoksa yeni bir tane oluþturabilirsiniz.");
+        }
+        else
+        {
+            LoadCharacter(playerid, AccountInfo[playerid][pSelectedCharacter]);
+        }
+    } 
+    else if(playertextid == CharacterPanel[playerid][10]) // CharcterPanelInfo [0]
+    {
+        if(CharacterPanelInfo[playerid][0][cSqlID] == 0)
+        {
+            // karakter oluþturma ekraný
+        }
+        else
+        {
+            ResetCharacterPanel(playerid);
+            PlayerTextDrawSetString(playerid, CharacterPanel[playerid][10], "mdl-4003:hud7");
+
+            AccountInfo[playerid][pSelectedCharacter] = CharacterPanelInfo[playerid][0][cSqlID];
+            ServerMessage(playerid, sprintf("Seçili karakterinizi %s olarak güncellediniz.", CharacterPanelInfo[playerid][0][cName]));
+        }
+    }
+    else if(playertextid == CharacterPanel[playerid][11]) // CharacterPanelInfo [1]
+    {
+        if(CharacterPanelInfo[playerid][1][cSqlID] == 0)
+        {
+            // karakter oluþturma ekraný
+        }
+        else
+        {
+            ResetCharacterPanel(playerid);
+            PlayerTextDrawSetString(playerid, CharacterPanel[playerid][11], "mdl-4003:hud7");
+
+            AccountInfo[playerid][pSelectedCharacter] = CharacterPanelInfo[playerid][1][cSqlID];
+            ServerMessage(playerid, sprintf("Seçili karakterinizi %s olarak güncellediniz.", CharacterPanelInfo[playerid][1][cName]));
+        }
+    }
+    else if(playertextid == CharacterPanel[playerid][13]) // CharacterPanelInfo [2]
+    {
+        if(CharacterPanelInfo[playerid][2][cSqlID] == 0)
+        {
+            // karakter oluþturma ekraný
+        }
+        else
+        {
+            ResetCharacterPanel(playerid);
+            PlayerTextDrawSetString(playerid, CharacterPanel[playerid][13], "mdl-4003:hud7");
+
+            AccountInfo[playerid][pSelectedCharacter] = CharacterPanelInfo[playerid][2][cSqlID];
+            ServerMessage(playerid, sprintf("Seçili karakterinizi %s olarak güncellediniz.", CharacterPanelInfo[playerid][2][cName]));
+        }
+    }
+    return 1;
+}

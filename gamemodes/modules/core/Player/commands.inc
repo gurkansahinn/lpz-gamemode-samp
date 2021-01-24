@@ -51,6 +51,24 @@ CMD:z(playerid, params[])
 	return 1;
 }
 
+CMD:mouse(playerid, params[])
+{
+	SelectTextDraw(playerid, 0x6f0407FF);
+	return 1;
+}
+
+CMD:changesize(playerid, params[])
+{
+	new Float:x, Float:y;
+
+	if(sscanf(params, "ff", x, y))
+		return UsageMessage(playerid, "/changesize [x] [y]");
+
+	PlayerTextDrawTextSize(playerid, CharacterPanel[playerid][31], x, y);
+	ServerMessage(playerid, "Size'yi deðiþtirdin.");
+	return 1;
+}
+
 /* CMD:ekip(playerid)
 {
 	new bool:found = false;

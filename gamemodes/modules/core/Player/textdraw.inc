@@ -16,7 +16,7 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][0], 4);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][0], 0);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][0], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][0], false);
+    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][0], true);
 
     CharacterPanel[playerid][1] = CreatePlayerTextDraw(playerid, 429.329254, 10.966629, "mdl-4003:b2");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][1], 0.000000, 0.000000);
@@ -113,7 +113,7 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][8], 0);
 
     CharacterPanel[playerid][9] = CreatePlayerTextDraw(playerid, 381.257476, 290.483856, "KARAKTER_OLUSTUR");
-    PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][9], 0.133876, 0.958329);
+    PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][9], 0.133873, 0.958329);
     PlayerTextDrawAlignment(playerid, CharacterPanel[playerid][9], 1);
     PlayerTextDrawColor(playerid, CharacterPanel[playerid][9], -1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][9], 0);
@@ -122,7 +122,6 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][9], 2);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][9], 1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][9], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][9], true);
 
     CharacterPanel[playerid][10] = CreatePlayerTextDraw(playerid, 379.019134, 288.116455, "mdl-4003:hud5");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][10], 0.000000, 0.000000);
@@ -135,7 +134,7 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][10], 4);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][10], 0);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][10], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][10], false);
+    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][10], true);
 
     CharacterPanel[playerid][11] = CreatePlayerTextDraw(playerid, 442.112548, 288.116455, "mdl-4003:hud5");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][11], 0.000000, 0.000000);
@@ -148,10 +147,10 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][11], 4);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][11], 0);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][11], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][11], false);
+    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][11], true);
 
     CharacterPanel[playerid][12] = CreatePlayerTextDraw(playerid, 444.206695, 290.650146, "KARAKTER_OLUSTUR");
-    PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][12], 0.133875, 0.958329);
+    PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][12], 0.133873, 0.958329);
     PlayerTextDrawAlignment(playerid, CharacterPanel[playerid][12], 1);
     PlayerTextDrawColor(playerid, CharacterPanel[playerid][12], -1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][12], 0);
@@ -160,7 +159,6 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][12], 2);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][12], 1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][12], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][12], true);
 
     CharacterPanel[playerid][13] = CreatePlayerTextDraw(playerid, 504.468597, 288.116424, "mdl-4003:hud5");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][13], 0.000000, 0.000000);
@@ -173,10 +171,10 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][13], 4);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][13], 0);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][13], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][13], false);
+    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][13], true);
 
     CharacterPanel[playerid][14] = CreatePlayerTextDraw(playerid, 505.955932, 290.450103, "KARAKTER_OLUSTUR");
-    PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][14], 0.133875, 0.958329);
+    PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][14], 0.133873, 0.958329);
     PlayerTextDrawAlignment(playerid, CharacterPanel[playerid][14], 1);
     PlayerTextDrawColor(playerid, CharacterPanel[playerid][14], -1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][14], 0);
@@ -185,7 +183,6 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][14], 2);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][14], 1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][14], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][14], true);
 
     CharacterPanel[playerid][15] = CreatePlayerTextDraw(playerid, 464.889984, 352.635437, "mdl-4003:hud4");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][15], 0.000000, 0.000000);
@@ -223,7 +220,7 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][17], 0);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][17], 0);
 
-    CharacterPanel[playerid][18] = CreatePlayerTextDraw(playerid, 573.409851, 291.516693, "SAYFA_1");
+    CharacterPanel[playerid][18] = CreatePlayerTextDraw(playerid, 573.409851, 291.516693, "SAYFA1");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][18], 0.181666, 0.958329);
     PlayerTextDrawAlignment(playerid, CharacterPanel[playerid][18], 1);
     PlayerTextDrawColor(playerid, CharacterPanel[playerid][18], -1);
@@ -233,7 +230,7 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][18], 1);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][18], 1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][18], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][18], false);
+    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][18], true);
 
     CharacterPanel[playerid][19] = CreatePlayerTextDraw(playerid, 591.508300, 267.699645, "mdl-4003:b9");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][19], 0.000000, 0.000000);
@@ -259,7 +256,7 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][20], 4);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][20], 0);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][20], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][20], false);
+    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][20], true);
 
     CharacterPanel[playerid][21] = CreatePlayerTextDraw(playerid, 379.493377, 368.019042, "mdl-4003:hud6");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][21], 0.000000, 0.000000);
@@ -307,7 +304,6 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][24], 1);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][24], 1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][24], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][24], true);
 
     CharacterPanel[playerid][25] = CreatePlayerTextDraw(playerid, 455.219726, 367.802276, "mdl-4003:HUD7");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][25], 0.000000, 0.000000);
@@ -320,6 +316,7 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][25], 4);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][25], 0);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][25], 0);
+    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][25], true);
 
     CharacterPanel[playerid][26] = CreatePlayerTextDraw(playerid, 569.082336, 367.352020, "mdl-4003:HUD7");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][26], 0.000000, 0.000000);
@@ -332,6 +329,7 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][26], 4);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][26], 0);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][26], 0);
+    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][26], true);
 
     CharacterPanel[playerid][27] = CreatePlayerTextDraw(playerid, 490.838562, 341.052368, "mdl-4003:b11");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][27], 0.000000, 0.000000);
@@ -355,7 +353,6 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][28], 1);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][28], 1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][28], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][28], true);
 
     CharacterPanel[playerid][29] = CreatePlayerTextDraw(playerid, 481.120452, 405.767730, "mdl-4003:b12");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][29], 0.000000, 0.000000);
@@ -381,21 +378,21 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][30], 0);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][30], 0);
 
-    CharacterPanel[playerid][31] = CreatePlayerTextDraw(playerid, 473.691375, 314.866638, "OYUNU~n~BASLAT");
-    PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][31], 0.332064, 1.424998);
+    CharacterPanel[playerid][31] = CreatePlayerTextDraw(playerid, 468.263580, 314.085388, "mdl-4003:hud6");
+    PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][31], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterPanel[playerid][31], 47.000000, 29.000000);
     PlayerTextDrawAlignment(playerid, CharacterPanel[playerid][31], 1);
     PlayerTextDrawColor(playerid, CharacterPanel[playerid][31], -1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][31], 0);
     PlayerTextDrawSetOutline(playerid, CharacterPanel[playerid][31], 0);
     PlayerTextDrawBackgroundColor(playerid, CharacterPanel[playerid][31], 255);
-    PlayerTextDrawFont(playerid, CharacterPanel[playerid][31], 1);
-    PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][31], 1);
+    PlayerTextDrawFont(playerid, CharacterPanel[playerid][31], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][31], 0);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][31], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][31], true);
 
-    CharacterPanel[playerid][32] = CreatePlayerTextDraw(playerid, 468.263580, 314.085388, "mdl-4003:hud6");
+    CharacterPanel[playerid][32] = CreatePlayerTextDraw(playerid, 468.269104, 314.368530, "mdl-4003:HUD7");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][32], 0.000000, 0.000000);
-    PlayerTextDrawTextSize(playerid, CharacterPanel[playerid][32], 47.000000, 29.000000);
+    PlayerTextDrawTextSize(playerid, CharacterPanel[playerid][32], 3.000000, 29.000000);
     PlayerTextDrawAlignment(playerid, CharacterPanel[playerid][32], 1);
     PlayerTextDrawColor(playerid, CharacterPanel[playerid][32], -1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][32], 0);
@@ -404,9 +401,8 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][32], 4);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][32], 0);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][32], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][32], true);
 
-    CharacterPanel[playerid][33] = CreatePlayerTextDraw(playerid, 468.269104, 314.368530, "mdl-4003:HUD7");
+    CharacterPanel[playerid][33] = CreatePlayerTextDraw(playerid, 514.608398, 314.568542, "mdl-4003:HUD7");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][33], 0.000000, 0.000000);
     PlayerTextDrawTextSize(playerid, CharacterPanel[playerid][33], 3.000000, 29.000000);
     PlayerTextDrawAlignment(playerid, CharacterPanel[playerid][33], 1);
@@ -418,19 +414,18 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][33], 0);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][33], 0);
 
-    CharacterPanel[playerid][34] = CreatePlayerTextDraw(playerid, 514.608398, 314.568542, "mdl-4003:HUD7");
-    PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][34], 0.000000, 0.000000);
-    PlayerTextDrawTextSize(playerid, CharacterPanel[playerid][34], 3.000000, 29.000000);
+    CharacterPanel[playerid][34] = CreatePlayerTextDraw(playerid, 378.834594, 278.233581, "KARAKTERAD1");
+    PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][34], 0.147927, 0.859161);
     PlayerTextDrawAlignment(playerid, CharacterPanel[playerid][34], 1);
     PlayerTextDrawColor(playerid, CharacterPanel[playerid][34], -1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][34], 0);
     PlayerTextDrawSetOutline(playerid, CharacterPanel[playerid][34], 0);
     PlayerTextDrawBackgroundColor(playerid, CharacterPanel[playerid][34], 255);
-    PlayerTextDrawFont(playerid, CharacterPanel[playerid][34], 4);
-    PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][34], 0);
+    PlayerTextDrawFont(playerid, CharacterPanel[playerid][34], 1);
+    PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][34], 1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][34], 0);
 
-    CharacterPanel[playerid][35] = CreatePlayerTextDraw(playerid, 378.834594, 278.233581, "KARAKTERAD1");
+    CharacterPanel[playerid][35] = CreatePlayerTextDraw(playerid, 441.617218, 278.800292, "KARAKTERADI2");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][35], 0.147927, 0.859161);
     PlayerTextDrawAlignment(playerid, CharacterPanel[playerid][35], 1);
     PlayerTextDrawColor(playerid, CharacterPanel[playerid][35], -1);
@@ -441,7 +436,7 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][35], 1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][35], 0);
 
-    CharacterPanel[playerid][36] = CreatePlayerTextDraw(playerid, 441.617218, 278.800292, "KARAKTERADI2");
+    CharacterPanel[playerid][36] = CreatePlayerTextDraw(playerid, 504.356781, 278.800292, "KARAKTERADI3");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][36], 0.147927, 0.859161);
     PlayerTextDrawAlignment(playerid, CharacterPanel[playerid][36], 1);
     PlayerTextDrawColor(playerid, CharacterPanel[playerid][36], -1);
@@ -452,8 +447,8 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][36], 1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][36], 0);
 
-    CharacterPanel[playerid][37] = CreatePlayerTextDraw(playerid, 504.356781, 278.800292, "KARAKTERADI3");
-    PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][37], 0.147927, 0.859161);
+    CharacterPanel[playerid][37] = CreatePlayerTextDraw(playerid, 378.550689, 199.333358, "MEVCUT_KARAKTERLER");
+    PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][37], 0.303952, 1.314167);
     PlayerTextDrawAlignment(playerid, CharacterPanel[playerid][37], 1);
     PlayerTextDrawColor(playerid, CharacterPanel[playerid][37], -1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][37], 0);
@@ -463,16 +458,18 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][37], 1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][37], 0);
 
-    CharacterPanel[playerid][38] = CreatePlayerTextDraw(playerid, 378.550689, 199.333358, "MEVCUT_KARAKTERLER");
-    PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][38], 0.303952, 1.314167);
+    CharacterPanel[playerid][38] = CreatePlayerTextDraw(playerid, 477.492309, 317.050170, "OYUNU~n~BASLAT");
+    PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][38], 0.268344, 1.185832);
+    PlayerTextDrawTextSize(playerid, CharacterPanel[playerid][38], 516.0, 27.0);
     PlayerTextDrawAlignment(playerid, CharacterPanel[playerid][38], 1);
     PlayerTextDrawColor(playerid, CharacterPanel[playerid][38], -1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][38], 0);
     PlayerTextDrawSetOutline(playerid, CharacterPanel[playerid][38], 0);
-    PlayerTextDrawBackgroundColor(playerid, CharacterPanel[playerid][38], 255);
+    PlayerTextDrawBackgroundColor(playerid, CharacterPanel[playerid][38], -16711681);
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][38], 1);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][38], 1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][38], 0);
+    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][38], true);
 }
 
 stock ShowCharacterPanel(playerid)
@@ -485,7 +482,7 @@ stock ShowCharacterPanel(playerid)
     if(CharacterPanelInfo[playerid][0][cSqlID] != 0)
     {
         PlayerTextDrawSetString(playerid, CharacterPanel[playerid][9], "KARAKTER_SEC");
-        PlayerTextDrawSetString(playerid, CharacterPanel[playerid][35], CharacterPanelInfo[playerid][0][cName]);
+        PlayerTextDrawSetString(playerid, CharacterPanel[playerid][34], CharacterPanelInfo[playerid][0][cName]);
 
         PlayerTextDrawFont(playerid, CharacterPanel[playerid][6], 5);
         PlayerTextDrawSetPreviewModel(playerid, CharacterPanel[playerid][6], CharacterPanelInfo[playerid][0][cSkin]);
@@ -493,13 +490,13 @@ stock ShowCharacterPanel(playerid)
     else
     {
         PlayerTextDrawSetString(playerid, CharacterPanel[playerid][9], "KARAKTER_OLUSTUR");
-        PlayerTextDrawSetString(playerid, CharacterPanel[playerid][35], "KARAKTER_YOK");
+        PlayerTextDrawSetString(playerid, CharacterPanel[playerid][34], "KARAKTER_YOK");
     }
 
     if(CharacterPanelInfo[playerid][1][cSqlID] != 0)
     {
         PlayerTextDrawSetString(playerid, CharacterPanel[playerid][12], "KARAKTER_SEC");
-        PlayerTextDrawSetString(playerid, CharacterPanel[playerid][36], CharacterPanelInfo[playerid][1][cName]);
+        PlayerTextDrawSetString(playerid, CharacterPanel[playerid][35], CharacterPanelInfo[playerid][1][cName]);
 
         PlayerTextDrawFont(playerid, CharacterPanel[playerid][7], 5);
         PlayerTextDrawSetPreviewModel(playerid, CharacterPanel[playerid][7], CharacterPanelInfo[playerid][1][cSkin]);
@@ -507,14 +504,14 @@ stock ShowCharacterPanel(playerid)
     else
     {
         PlayerTextDrawSetString(playerid, CharacterPanel[playerid][12], "KARAKTER_OLUSTUR");
-        PlayerTextDrawSetString(playerid, CharacterPanel[playerid][36], "KARAKTER_YOK");
+        PlayerTextDrawSetString(playerid, CharacterPanel[playerid][35], "KARAKTER_YOK");
         PlayerTextDrawFont(playerid, CharacterPanel[playerid][7], 4);
     }
 
     if(CharacterPanelInfo[playerid][2][cSqlID] != 0)
     {
         PlayerTextDrawSetString(playerid, CharacterPanel[playerid][14], "KARAKTER_SEC");
-        PlayerTextDrawSetString(playerid, CharacterPanel[playerid][37], CharacterPanelInfo[playerid][2][cName]);
+        PlayerTextDrawSetString(playerid, CharacterPanel[playerid][36], CharacterPanelInfo[playerid][2][cName]);
 
         PlayerTextDrawFont(playerid, CharacterPanel[playerid][8], 5);
         PlayerTextDrawSetPreviewModel(playerid, CharacterPanel[playerid][8], CharacterPanelInfo[playerid][2][cSkin]);
@@ -522,7 +519,7 @@ stock ShowCharacterPanel(playerid)
     else
     {
         PlayerTextDrawSetString(playerid, CharacterPanel[playerid][14], "KARAKTER_OLUSTUR");
-        PlayerTextDrawSetString(playerid, CharacterPanel[playerid][37], "KARAKTER_YOK");
+        PlayerTextDrawSetString(playerid, CharacterPanel[playerid][36], "KARAKTER_YOK");
         PlayerTextDrawFont(playerid, CharacterPanel[playerid][8], 4);
     }
 
@@ -531,6 +528,25 @@ stock ShowCharacterPanel(playerid)
         PlayerTextDrawShow(playerid, CharacterPanel[playerid][characterPanelTextdraw]);
     }
 
-    SelectTextDraw(playerid, 700505);
+    ShowMouseToPlayer(playerid);
+    return 1;
+}
+
+stock ShowMouseToPlayer(playerid)
+{
+    InfoMessage(playerid, "Eðer ki mouse kaybolursa /mouse komutuyla tekrar getirebilirsiniz.");
+    SelectTextDraw(playerid, 0x6f0407FF);
+    return 1;
+}
+
+stock ResetCharacterPanel(playerid)
+{
+    PlayerTextDrawSetString(playerid, CharacterPanel[playerid][10], "mdl-4003:hud5");
+    PlayerTextDrawSetString(playerid, CharacterPanel[playerid][11], "mdl-4003:hud5");
+    PlayerTextDrawSetString(playerid, CharacterPanel[playerid][13], "mdl-4003:hud5");
+
+    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][10], true);
+    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][11], true);
+    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][13], true);
     return 1;
 }

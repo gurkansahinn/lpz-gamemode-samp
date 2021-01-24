@@ -9,7 +9,8 @@ enum E_Account {
 	pStateFlags,
     pStaffRoles,
 
-    pCharacterPanelPage
+    pCharacterPanelPage,
+    pSelectedCharacter
 }
 
 new AccountInfo[MAX_PLAYERS][E_Account];
@@ -36,8 +37,21 @@ enum(<<=1)
 // Character
 enum E_Character {
     cID,
+    cName[MAX_PLAYER_NAME],
+    cSkin,
     cStateFlags,
-    cMovementState
+    cMovementState,
+
+    Float:cX,
+    Float:cY,
+    Float:cZ,
+    Float:cA,
+
+    cInterior,
+    cWorld,
+
+    Float:cHealth,
+    Float:cArmour
 }
 
 new CharacterInfo[MAX_PLAYERS][E_Character];

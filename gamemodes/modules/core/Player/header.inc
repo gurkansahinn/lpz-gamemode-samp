@@ -12,12 +12,20 @@ forward OnPlayerReceivedAccount(playerid);
 
 /*
     # Description
-    Return player characters (CHARACTER_PER_PAGE LIMIT)
+    Return player characters. (CHARACTER_PER_PAGE LIMIT)
 
     # Index List
     0) characters.character_id
-    1) characters.character_account_id
-    2) characters.character_name
-    3) characters.character_skin
+    1) characters.character_name
+    2) characters.character_skin
 */
 forward OnPlayerReceivedCharacters(playerid);
+
+/*
+    # Description
+    Load character data.
+
+    # Index List
+    Using value name.
+*/
+forward OnPlayerLoadCharacter(playerid);

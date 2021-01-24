@@ -380,6 +380,16 @@ stock GetName(playerid, underscore = 1)
     return name;
 }
 
+stock RemoveUnderscore(const name[])
+{
+    new newName[MAX_PLAYER_NAME];
+    format(newName, sizeof(newName), name);
+    for (new i = 0, len = strlen(newName); i < len; i ++) {
+        if(newName[i] == '_') newName[i] = ' ';
+    }
+    return newName;
+}
+
 stock ClearChat(playerid, lines = 20)
 {
     for(new i = 0; i < lines; i++)
@@ -462,7 +472,6 @@ stock ShowLoginDialog(playerid)
             ServerMessage(playerid, "Ýþlem baþarýlý karakter giriþ yapma ekraný hazýrlanýyor.");
             
             mysql_tquery(mysqlG, GetCharacterData(.fields = "characters.character_id, characters.character_name, characters.character_skin", .page = AccountInfo[playerid][pCharacterPanelPage], .accountId = AccountInfo[playerid][pID]), "OnPlayerReceivedCharacters", "d", playerid);
-
             return true;
         }
         else
@@ -475,4 +484,10 @@ stock ShowLoginDialog(playerid)
 
     Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_PASSWORD, sprintf("%s - Giriþ Yap", AccountInfo[playerid][pName]), "Kullanýcý paneli üzerinden belirlediðin þifren ile giriþ yapabilirsin.\nGiriþ yaptýðýn zaman karakter bilgilerini görüntüleyeceksin.", "Giriþ Yap", "Çýkýþ Yap");
     return true;
+}
+
+stock LoadCharacter(playerid, sqlId)
+{
+    mysql_tquery(mysqlG, GetCharacterData(.characterId = sqlId), "OnPlayerLoadCharacter", "d", playerid);
+    return 1;
 }
