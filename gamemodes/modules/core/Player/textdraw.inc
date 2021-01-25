@@ -491,6 +491,8 @@ stock ShowCharacterPanel(playerid)
     {
         PlayerTextDrawSetString(playerid, CharacterPanel[playerid][9], "KARAKTER_OLUSTUR");
         PlayerTextDrawSetString(playerid, CharacterPanel[playerid][34], "KARAKTER_YOK");
+
+        PlayerTextDrawFont(playerid, CharacterPanel[playerid][6], 4);
     }
 
     if(CharacterPanelInfo[playerid][1][cSqlID] != 0)

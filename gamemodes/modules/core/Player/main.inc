@@ -76,6 +76,23 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
             LoadCharacter(playerid, AccountInfo[playerid][pSelectedCharacter]);
         }
     } 
+    else if(playertextid == CharacterPanel[playerid][19]) // Sayfa Atla CharacterPanel [19]
+    {
+        AccountInfo[playerid][pCharacterPanelPage]++;
+        CheckPlayerCharacters(playerid);
+    }
+    else if(playertextid == CharacterPanel[playerid][20]) // Sayfa Geri CharacterPanel [20]
+    {
+        if(AccountInfo[playerid][pCharacterPanelPage] <= 1)
+        {
+            ErrorMessage(playerid, "Bu sayfadan geriye gidemezsin.");
+        }
+        else
+        {
+            AccountInfo[playerid][pCharacterPanelPage]--;
+            CheckPlayerCharacters(playerid);
+        }
+    }
     else if(playertextid == CharacterPanel[playerid][10]) // CharcterPanelInfo [0]
     {
         if(CharacterPanelInfo[playerid][0][cSqlID] == 0)

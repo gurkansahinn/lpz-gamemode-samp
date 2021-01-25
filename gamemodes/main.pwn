@@ -32,6 +32,9 @@
 #include <env>
 #include <vector>
 #include <sscanf2>
+
+#define PP_SYNTAX_AWAIT
+
 #include <PawnPlus>
 #include <eSelection>
 #include <streamer>

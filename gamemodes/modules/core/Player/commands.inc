@@ -57,15 +57,8 @@ CMD:mouse(playerid, params[])
 	return 1;
 }
 
-CMD:changesize(playerid, params[])
+CMD:test(playerid, params[])
 {
-	new Float:x, Float:y;
-
-	if(sscanf(params, "ff", x, y))
-		return UsageMessage(playerid, "/changesize [x] [y]");
-
-	PlayerTextDrawTextSize(playerid, CharacterPanel[playerid][31], x, y);
-	ServerMessage(playerid, "Size'yi deðiþtirdin.");
 	return 1;
 }
 

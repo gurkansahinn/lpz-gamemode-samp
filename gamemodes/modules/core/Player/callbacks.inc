@@ -47,10 +47,20 @@ public OnPlayerReceivedCharacters(playerid)
 {
     new rows = cache_num_rows();
 
+    for(new characterPanelArray = 0; characterPanelArray < CHARACTER_PER_PAGE; characterPanelArray++)
+    {
+        CharacterPanelInfo[playerid][characterPanelArray][cSqlID] = 0;
+        CharacterPanelInfo[playerid][characterPanelArray][cName] = EOS;
+        CharacterPanelInfo[playerid][characterPanelArray][cSkin] = INVALID_CHARACTER_SKIN;
+    }
+
     if(rows)
     {
         for(new character = 0; character < rows; character++)
         {
+            if(character == CHARACTER_PER_PAGE)
+                break;
+
             cache_get_value_index_int(character, 0, CharacterPanelInfo[playerid][character][cSqlID]);
 
             cache_get_value_index(character, 1, CharacterPanelInfo[playerid][character][cName]);
@@ -60,6 +70,7 @@ public OnPlayerReceivedCharacters(playerid)
         }
     }
 
+    ResetCharacterPanel(playerid);
     ShowCharacterPanel(playerid);
     return 1;
 }

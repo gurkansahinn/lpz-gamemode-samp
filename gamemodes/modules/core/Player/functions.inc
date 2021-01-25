@@ -59,7 +59,7 @@ stock GetAccountData(const fields[] = "accounts.*", const joins[] = "", const wh
 
 */
 
-stock GetCharacterData(const fields[] = "characters.*", const joins[] = "", const wheres[] = "", page = 1, limit = -1, accountId = -1, characterId = -1, const characterName[] = "")
+stock GetCharacterData(const fields[] = "characters.*", const joins[] = "", const wheres[] = "", page = 1, accountId = -1, characterId = -1, const characterName[] = "")
 {
     new query[512];
 
@@ -94,11 +94,14 @@ stock GetCharacterData(const fields[] = "characters.*", const joins[] = "", cons
 
     //mysql_format(mysqlG, query, sizeof(query), "%s ORDER BY characters.character_id DESC", query);
 
-    if(limit == -1)
+    /*if(limit == -1)
         mysql_format(mysqlG, query, sizeof(query), "%s LIMIT %d, 10000", query, ((page - 1) * CHARACTER_PER_PAGE));
     else
-        mysql_format(mysqlG, query, sizeof(query), "%s LIMIT %d, 1", query, ((page - 1) * CHARACTER_PER_PAGE) + limit);
+        mysql_format(mysqlG, query, sizeof(query), "%s LIMIT %d, 1", query, ((page - 1) * CHARACTER_PER_PAGE) + limit);*/
 
+    if(page != 1)
+        mysql_format(mysqlG, query, sizeof(query), "%s LIMIT %d, %d", query, ((page-1) * CHARACTER_PER_PAGE), page * CHARACTER_PER_PAGE);
+        
     return query;
 }
 
@@ -467,7 +470,7 @@ stock ShowLoginDialog(playerid)
         {
             ServerMessage(playerid, "Ýþlem baþarýlý karakter giriþ yapma ekraný hazýrlanýyor.");
             
-            mysql_tquery(mysqlG, GetCharacterData(.fields = "characters.character_id, characters.character_name, characters.character_skin", .page = AccountInfo[playerid][pCharacterPanelPage], .accountId = AccountInfo[playerid][pID]), "OnPlayerReceivedCharacters", "d", playerid);
+            CheckPlayerCharacters(playerid);
             return true;
         }
         else
@@ -512,4 +515,9 @@ stock UpdateCharacterNametag(playerid)
 		UpdateDynamic3DTextLabelText(CharacterInfo[playerid][cNametagID], -1, RemoveUnderscore(CharacterInfo[playerid][cName]));
 	}
 	return 1;
+}
+
+stock CheckPlayerCharacters(playerid)
+{
+    mysql_tquery(mysqlG, GetCharacterData(.fields = "characters.character_id, characters.character_name, characters.character_skin", .page = AccountInfo[playerid][pCharacterPanelPage], .accountId = AccountInfo[playerid][pID]), "OnPlayerReceivedCharacters", "d", playerid);
 }
