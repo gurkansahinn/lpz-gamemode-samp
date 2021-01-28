@@ -61,7 +61,7 @@ stock GetAccountData(const fields[] = "accounts.*", const joins[] = "", const wh
 
 stock GetCharacterData(const fields[] = "characters.*", const joins[] = "", const wheres[] = "", page = 1, accountId = -1, characterId = -1, const characterName[] = "")
 {
-    new query[512];
+    new query[715+MAX_PLAYER_NAME];
 
     format(query, sizeof(query), "SELECT %s FROM characters", fields);
 
@@ -512,7 +512,7 @@ stock UpdateCharacterNametag(playerid)
 		if(!IsValidDynamic3DTextLabel(CharacterInfo[playerid][cNametagID]))
 			CreateCharacterNametag(playerid);
 
-		UpdateDynamic3DTextLabelText(CharacterInfo[playerid][cNametagID], -1, RemoveUnderscore(CharacterInfo[playerid][cName]));
+		UpdateDynamic3DTextLabelText(CharacterInfo[playerid][cNametagID], -1, sprintf("%s (%d)", CharacterInfo[playerid][cName], playerid));
 	}
 	return 1;
 }
