@@ -12,7 +12,11 @@ enum E_Account {
     pCharacterPanelPage,
     pSelectedCharacter,
 
-    pCameraZoom
+    pCreatorStage,
+    pCreatorName[MAX_PLAYER_NAME],
+
+    pCameraZoom,
+
 }
 
 new AccountInfo[MAX_PLAYERS][E_Account];
@@ -111,4 +115,18 @@ new PlayerStaffRoles[][] =
     "Lead Admin",
     "Game Admin",
     "Helper"
+};
+
+/*new Genders[][] = 
+{
+    "Belirtilmemis",
+    "Erkek",
+    "Kadýn"
+};*/
+
+new BlockedNames[][] =
+{
+    "John_Wick",
+    "Rick_Grimes",
+    "Daryl_Dixon"
 };

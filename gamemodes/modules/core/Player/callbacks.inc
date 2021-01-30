@@ -1,23 +1,24 @@
 task GlobalSecondTimer[1000]() 
 {
-    foreach(new p : Player)
+    foreach(new player : Player)
     {
-        if(AccountInfo[p][pCameraZoom] > 1)
+        if(AccountInfo[player][pCameraZoom] > 1)
         {
             new Float:x, Float:y, Float:z;
 
-            GetPlayerPos(p, x, y, z);
+            GetPlayerPos(player, x, y, z);
 
-            AccountInfo[p][pCameraZoom]--;
+            AccountInfo[player][pCameraZoom]--;
 
-            SetPlayerCameraPos(p, x, y, z + (25.0 * AccountInfo[p][pCameraZoom]));
-            SetPlayerCameraLookAt(p, x, y, z);
+            SetPlayerCameraPos(player, x, y, z + (25.0 * AccountInfo[player][pCameraZoom]));
+            SetPlayerCameraLookAt(player, x, y, z);
         }
-        else if(AccountInfo[p][pCameraZoom] == 1)
+        else if(AccountInfo[player][pCameraZoom] == 1)
         {
-            AccountInfo[p][pCameraZoom] = 0;
+            AccountInfo[player][pCameraZoom] = 0;
 
-            SetCameraBehindPlayer(p);
+            SetCameraBehindPlayer(player);
         }
     }
+    return 1;
 }

@@ -1,0 +1,3 @@
+#define CREATOR_FIRST_STAGE     (0)
+#define CREATOR_SECOND_STAGE    (1)
+#define CREATOR_THIRD_STAGE     (2)

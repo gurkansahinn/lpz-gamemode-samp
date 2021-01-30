@@ -9,7 +9,7 @@
 #include <core/Player/callbacks>
 
 // Character Creator
-#include <core/Player/charactercreator/textdraw>
+#include <core/Player/creator/main>
 
 // Login System
 #include <core/Player/login/main>
@@ -64,6 +64,7 @@ hook OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 
 public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 {
+    // Character Panel
     if(playertextid == CharacterPanel[playerid][38])
     {
         new sqlid = AccountInfo[playerid][pSelectedCharacter];
@@ -113,7 +114,8 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     {
         if(CharacterPanelInfo[playerid][1][cSqlID] == 0)
         {
-            // karakter oluþturma ekraný
+            HideCharacterPanel(playerid);
+            ShowCharacterCreatorFirstPanel(playerid);
         }
         else
         {
@@ -128,7 +130,8 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     {
         if(CharacterPanelInfo[playerid][2][cSqlID] == 0)
         {
-            // karakter oluþturma ekraný
+            HideCharacterPanel(playerid);
+            ShowCharacterCreatorFirstPanel(playerid);
         }
         else
         {
@@ -138,6 +141,17 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
             AccountInfo[playerid][pSelectedCharacter] = CharacterPanelInfo[playerid][2][cSqlID];
             ServerMessage(playerid, sprintf("Seçili karakterinizi %s olarak güncellediniz.", CharacterPanelInfo[playerid][2][cName]));
         }
+    }
+
+    // Character Creator
+    else if(playertextid == CharacterFirstCreator[playerid][31]) // Back Button
+    {
+        HideCharacterCreatorFirstPanel(playerid);
+        CheckPlayerCharacters(playerid); 
+    }
+    else if(playertextid == CharacterFirstCreator[playerid][23]) // Character Name
+    {
+        ShowCreatorNameDialog(playerid);
     }
     return 1;
 }

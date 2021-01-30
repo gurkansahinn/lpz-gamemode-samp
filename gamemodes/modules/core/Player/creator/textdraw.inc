@@ -281,7 +281,7 @@ stock CreateCreatorFirstPanel(playerid)
 
     CharacterFirstCreator[playerid][23] = CreatePlayerTextDraw(playerid, 495.681030, 224.116668, "Belirtilmemis");
     PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][23], 0.211654, 1.279165);
-    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][23], 560.0, 10.0);
+    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][23], 600.0, 10.0);
     PlayerTextDrawAlignment(playerid, CharacterFirstCreator[playerid][23], 1);
     PlayerTextDrawColor(playerid, CharacterFirstCreator[playerid][23], -1);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][23], 0);
@@ -378,9 +378,34 @@ stock CreateCreatorFirstPanel(playerid)
     PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][30], 0);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][30], 0);
 
-    CharacterFirstCreator[playerid][33] = CreatePlayerTextDraw(playerid, 384.204559, 277.184967, "mdl-4004:ab6");
+    CharacterFirstCreator[playerid][31] = CreatePlayerTextDraw(playerid, 402.122344, 327.466857, "mdl-4005:aba14");
+    PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][31], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][31], 70.000000, 40.000000);
+    PlayerTextDrawAlignment(playerid, CharacterFirstCreator[playerid][31], 1);
+    PlayerTextDrawColor(playerid, CharacterFirstCreator[playerid][31], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][31], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterFirstCreator[playerid][31], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterFirstCreator[playerid][31], 255);
+    PlayerTextDrawFont(playerid, CharacterFirstCreator[playerid][31], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][31], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][31], 0);
+    PlayerTextDrawSetSelectable(playerid, CharacterFirstCreator[playerid][31], true);
+
+    CharacterFirstCreator[playerid][32] = CreatePlayerTextDraw(playerid, 384.204559, 277.184967, "mdl-4004:ab6");
+    PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][32], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][32], 215.000000, 40.000000);
+    PlayerTextDrawAlignment(playerid, CharacterFirstCreator[playerid][32], 1);
+    PlayerTextDrawColor(playerid, CharacterFirstCreator[playerid][32], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][32], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterFirstCreator[playerid][32], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterFirstCreator[playerid][32], 255);
+    PlayerTextDrawFont(playerid, CharacterFirstCreator[playerid][32], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][32], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][32], 0);
+
+    CharacterFirstCreator[playerid][33] = CreatePlayerTextDraw(playerid, 390.447601, 282.134765, "mdl-4004:ab4");
     PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][33], 0.000000, 0.000000);
-    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][33], 215.000000, 40.000000);
+    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][33], 60.000000, 30.000000);
     PlayerTextDrawAlignment(playerid, CharacterFirstCreator[playerid][33], 1);
     PlayerTextDrawColor(playerid, CharacterFirstCreator[playerid][33], -1);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][33], 0);
@@ -390,34 +415,34 @@ stock CreateCreatorFirstPanel(playerid)
     PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][33], 0);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][33], 0);
 
-    CharacterFirstCreator[playerid][34] = CreatePlayerTextDraw(playerid, 390.447601, 282.134765, "mdl-4004:ab4");
-    PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][34], 0.000000, 0.000000);
-    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][34], 60.000000, 30.000000);
+    CharacterFirstCreator[playerid][34] = CreatePlayerTextDraw(playerid, 495.881042, 291.020751, "BELIRTILMEMIS");
+    PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][34], 0.211654, 1.279165);
+    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][34], 560.0, 10.0);
     PlayerTextDrawAlignment(playerid, CharacterFirstCreator[playerid][34], 1);
     PlayerTextDrawColor(playerid, CharacterFirstCreator[playerid][34], -1);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][34], 0);
     PlayerTextDrawSetOutline(playerid, CharacterFirstCreator[playerid][34], 0);
     PlayerTextDrawBackgroundColor(playerid, CharacterFirstCreator[playerid][34], 255);
-    PlayerTextDrawFont(playerid, CharacterFirstCreator[playerid][34], 4);
-    PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][34], 0);
+    PlayerTextDrawFont(playerid, CharacterFirstCreator[playerid][34], 2);
+    PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][34], 1);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][34], 0);
+    PlayerTextDrawSetSelectable(playerid, CharacterFirstCreator[playerid][34], true);
 
-    CharacterFirstCreator[playerid][35] = CreatePlayerTextDraw(playerid, 495.881042, 291.020751, "BELIRTILMEMIS");
-    PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][35], 0.211654, 1.279165);
-    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][35], 560.0, 10.0);
+    CharacterFirstCreator[playerid][35] = CreatePlayerTextDraw(playerid, 384.273101, 299.935089, "mdl-4004:ab6");
+    PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][35], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][35], 215.000000, 40.000000);
     PlayerTextDrawAlignment(playerid, CharacterFirstCreator[playerid][35], 1);
     PlayerTextDrawColor(playerid, CharacterFirstCreator[playerid][35], -1);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][35], 0);
     PlayerTextDrawSetOutline(playerid, CharacterFirstCreator[playerid][35], 0);
     PlayerTextDrawBackgroundColor(playerid, CharacterFirstCreator[playerid][35], 255);
-    PlayerTextDrawFont(playerid, CharacterFirstCreator[playerid][35], 2);
-    PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][35], 1);
+    PlayerTextDrawFont(playerid, CharacterFirstCreator[playerid][35], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][35], 0);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][35], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterFirstCreator[playerid][35], true);
 
-    CharacterFirstCreator[playerid][36] = CreatePlayerTextDraw(playerid, 384.273101, 299.935089, "mdl-4004:ab6");
+    CharacterFirstCreator[playerid][36] = CreatePlayerTextDraw(playerid, 393.458862, 304.118164, "mdl-4004:ab5");
     PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][36], 0.000000, 0.000000);
-    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][36], 215.000000, 40.000000);
+    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][36], 60.000000, 30.000000);
     PlayerTextDrawAlignment(playerid, CharacterFirstCreator[playerid][36], 1);
     PlayerTextDrawColor(playerid, CharacterFirstCreator[playerid][36], -1);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][36], 0);
@@ -427,32 +452,32 @@ stock CreateCreatorFirstPanel(playerid)
     PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][36], 0);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][36], 0);
 
-    CharacterFirstCreator[playerid][37] = CreatePlayerTextDraw(playerid, 393.458862, 304.118164, "mdl-4004:ab5");
-    PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][37], 0.000000, 0.000000);
-    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][37], 60.000000, 30.000000);
+    CharacterFirstCreator[playerid][37] = CreatePlayerTextDraw(playerid, 495.412506, 314.022155, "BELIRTILMEMIS");
+    PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][37], 0.211654, 1.279165);
     PlayerTextDrawAlignment(playerid, CharacterFirstCreator[playerid][37], 1);
+    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][37], 560.0, 10.0);
     PlayerTextDrawColor(playerid, CharacterFirstCreator[playerid][37], -1);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][37], 0);
     PlayerTextDrawSetOutline(playerid, CharacterFirstCreator[playerid][37], 0);
     PlayerTextDrawBackgroundColor(playerid, CharacterFirstCreator[playerid][37], 255);
-    PlayerTextDrawFont(playerid, CharacterFirstCreator[playerid][37], 4);
-    PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][37], 0);
+    PlayerTextDrawFont(playerid, CharacterFirstCreator[playerid][37], 2);
+    PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][37], 1);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][37], 0);
+    PlayerTextDrawSetSelectable(playerid, CharacterFirstCreator[playerid][37], true);
 
-    CharacterFirstCreator[playerid][38] = CreatePlayerTextDraw(playerid, 495.412506, 314.022155, "BELIRTILMEMIS");
-    PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][38], 0.211654, 1.279165);
-    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][38], 560.0, 10.0);
+    CharacterFirstCreator[playerid][38] = CreatePlayerTextDraw(playerid, 476.303466, 310.750091, "mdl-4004:ab7");
+    PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][38], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][38], 20.000000, 19.000000);
     PlayerTextDrawAlignment(playerid, CharacterFirstCreator[playerid][38], 1);
     PlayerTextDrawColor(playerid, CharacterFirstCreator[playerid][38], -1);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][38], 0);
     PlayerTextDrawSetOutline(playerid, CharacterFirstCreator[playerid][38], 0);
     PlayerTextDrawBackgroundColor(playerid, CharacterFirstCreator[playerid][38], 255);
-    PlayerTextDrawFont(playerid, CharacterFirstCreator[playerid][38], 2);
-    PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][38], 1);
+    PlayerTextDrawFont(playerid, CharacterFirstCreator[playerid][38], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][38], 0);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][38], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterFirstCreator[playerid][38], true);
 
-    CharacterFirstCreator[playerid][39] = CreatePlayerTextDraw(playerid, 476.303466, 310.750091, "mdl-4004:ab7");
+    CharacterFirstCreator[playerid][39] = CreatePlayerTextDraw(playerid, 476.303466, 288.732055, "mdl-4004:ab7");
     PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][39], 0.000000, 0.000000);
     PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][39], 20.000000, 19.000000);
     PlayerTextDrawAlignment(playerid, CharacterFirstCreator[playerid][39], 1);
@@ -464,9 +489,9 @@ stock CreateCreatorFirstPanel(playerid)
     PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][39], 0);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][39], 0);
 
-    CharacterFirstCreator[playerid][40] = CreatePlayerTextDraw(playerid, 476.303466, 288.732055, "mdl-4004:ab7");
+    CharacterFirstCreator[playerid][40] = CreatePlayerTextDraw(playerid, 449.545288, 319.500061, "mdl-4004:ab9");
     PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][40], 0.000000, 0.000000);
-    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][40], 20.000000, 19.000000);
+    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][40], 84.000000, 55.000000);
     PlayerTextDrawAlignment(playerid, CharacterFirstCreator[playerid][40], 1);
     PlayerTextDrawColor(playerid, CharacterFirstCreator[playerid][40], -1);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][40], 0);
@@ -476,9 +501,9 @@ stock CreateCreatorFirstPanel(playerid)
     PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][40], 0);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][40], 0);
 
-    CharacterFirstCreator[playerid][41] = CreatePlayerTextDraw(playerid, 449.545288, 319.500061, "mdl-4004:ab9");
+    CharacterFirstCreator[playerid][41] = CreatePlayerTextDraw(playerid, 456.625671, 327.466857, "mdl-4004:ab10");
     PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][41], 0.000000, 0.000000);
-    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][41], 84.000000, 55.000000);
+    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][41], 70.000000, 40.000000);
     PlayerTextDrawAlignment(playerid, CharacterFirstCreator[playerid][41], 1);
     PlayerTextDrawColor(playerid, CharacterFirstCreator[playerid][41], -1);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][41], 0);
@@ -487,10 +512,11 @@ stock CreateCreatorFirstPanel(playerid)
     PlayerTextDrawFont(playerid, CharacterFirstCreator[playerid][41], 4);
     PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][41], 0);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][41], 0);
+    PlayerTextDrawSetSelectable(playerid, CharacterFirstCreator[playerid][41], true);
 
-    CharacterFirstCreator[playerid][42] = CreatePlayerTextDraw(playerid, 456.625671, 327.466857, "mdl-4004:ab10");
+    CharacterFirstCreator[playerid][42] = CreatePlayerTextDraw(playerid, 385.832885, 367.866790, "mdl-4004:aa7");
     PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][42], 0.000000, 0.000000);
-    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][42], 70.000000, 40.000000);
+    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][42], 210.639099, 3.000000);
     PlayerTextDrawAlignment(playerid, CharacterFirstCreator[playerid][42], 1);
     PlayerTextDrawColor(playerid, CharacterFirstCreator[playerid][42], -1);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][42], 0);
@@ -499,11 +525,10 @@ stock CreateCreatorFirstPanel(playerid)
     PlayerTextDrawFont(playerid, CharacterFirstCreator[playerid][42], 4);
     PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][42], 0);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][42], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterFirstCreator[playerid][42], true);
 
-    CharacterFirstCreator[playerid][43] = CreatePlayerTextDraw(playerid, 402.242340, 318.849945, "mdl-4004:ab12");
+    CharacterFirstCreator[playerid][43] = CreatePlayerTextDraw(playerid, 422.207885, 320.883453, "mdl-4005:aba12");
     PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][43], 0.000000, 0.000000);
-    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][43], 65.000000, 56.000000);
+    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][43], 50.000000, 56.000000);
     PlayerTextDrawAlignment(playerid, CharacterFirstCreator[playerid][43], 1);
     PlayerTextDrawColor(playerid, CharacterFirstCreator[playerid][43], -1);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][43], 0);
@@ -512,11 +537,10 @@ stock CreateCreatorFirstPanel(playerid)
     PlayerTextDrawFont(playerid, CharacterFirstCreator[playerid][43], 4);
     PlayerTextDrawSetProportional(playerid, CharacterFirstCreator[playerid][43], 0);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][43], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterFirstCreator[playerid][43], true);
 
-    CharacterFirstCreator[playerid][44] = CreatePlayerTextDraw(playerid, 385.832885, 367.866790, "mdl-4004:aa7");
+    CharacterFirstCreator[playerid][44] = CreatePlayerTextDraw(playerid, 399.006469, 320.883453, "mdl-4005:aba13");
     PlayerTextDrawLetterSize(playerid, CharacterFirstCreator[playerid][44], 0.000000, 0.000000);
-    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][44], 210.639099, 3.000000);
+    PlayerTextDrawTextSize(playerid, CharacterFirstCreator[playerid][44], 50.000000, 56.000000);
     PlayerTextDrawAlignment(playerid, CharacterFirstCreator[playerid][44], 1);
     PlayerTextDrawColor(playerid, CharacterFirstCreator[playerid][44], -1);
     PlayerTextDrawSetShadow(playerid, CharacterFirstCreator[playerid][44], 0);
@@ -529,10 +553,19 @@ stock CreateCreatorFirstPanel(playerid)
 
 stock ShowCharacterCreatorFirstPanel(playerid)
 {
+    ResetCreatorFirstData(playerid);
     for(new i = 0; i < MAX_FIRST_CHARACTER_CREATOR_TEXTDRAW; i++)
     {
         PlayerTextDrawShow(playerid, CharacterFirstCreator[playerid][i]);
     }
+}
+
+stock HideCharacterCreatorFirstPanel(playerid)
+{
+    for(new i = 0; i < MAX_FIRST_CHARACTER_CREATOR_TEXTDRAW; i++)
+    {
+        PlayerTextDrawHide(playerid, CharacterFirstCreator[playerid][i]);
+    } 
 }
 
 CMD:test(playerid, params[])

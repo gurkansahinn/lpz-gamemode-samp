@@ -295,10 +295,10 @@ public OnGameModeInit()
 		g_ePlayerMenuData[i][g_eMenuPageText] = PlayerText:INVALID_TEXT_DRAW;
 		g_ePlayerMenuData[i][g_eMenuHeaderText] = PlayerText:INVALID_TEXT_DRAW;
 
-		for(new p = 0; p < MAX_ITEM_PER_PAGE; p++)
+		for(new x = 0; x < MAX_ITEM_PER_PAGE; x++)
 		{
-			g_ePlayerMenuData[i][g_eMenuItems][p] = PlayerText:INVALID_TEXT_DRAW;
-			g_ePlayerMenuData[i][g_eMenuTextDisplay][p] = PlayerText:INVALID_TEXT_DRAW;
+			g_ePlayerMenuData[i][g_eMenuItems][x] = PlayerText:INVALID_TEXT_DRAW;
+			g_ePlayerMenuData[i][g_eMenuTextDisplay][x] = PlayerText:INVALID_TEXT_DRAW;
 		}
 	}
 
