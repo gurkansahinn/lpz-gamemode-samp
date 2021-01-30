@@ -552,3 +552,11 @@ stock ResetCharacterPanel(playerid)
     PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][13], true);
     return 1;
 }
+
+stock HideCharacterPanel(playerid)
+{
+    for(new characterPanelTextdraw = 0; characterPanelTextdraw < MAX_CHARACTER_PANEL_TEXTDRAW; characterPanelTextdraw++)
+    {
+        PlayerTextDrawHide(playerid, CharacterPanel[playerid][characterPanelTextdraw]);
+    }
+}

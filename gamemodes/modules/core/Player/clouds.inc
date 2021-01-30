@@ -55,8 +55,7 @@ enum E_Character {
     Float:cHealth,
     Float:cArmour,
 
-    Text3D:cNametagID,
-    cNametagHeight
+    Text3D:cNametagID
 }
 
 new CharacterInfo[MAX_PLAYERS][E_Character];

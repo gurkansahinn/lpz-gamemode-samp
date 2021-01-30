@@ -4,12 +4,6 @@
 
 */
 
-stock CheckPlayerAccount(playerid)
-{
-    mysql_tquery(mysqlG, GetAccountData(.fields = "accounts.account_id, accounts.account_forum_id, accounts.account_name, accounts.account_password", .forumId = strval(GetName(playerid))), "OnPlayerReceivedAccount", "d", playerid);
-    return 1;
-}
-
 stock GetAccountData(const fields[] = "accounts.*", const joins[] = "", const wheres[] = "", page = 1, limit = -1, accountId = -1, forumId = -1, const accountName[] = "")
 {
     new query[512];
@@ -55,7 +49,7 @@ stock GetAccountData(const fields[] = "accounts.*", const joins[] = "", const wh
 
 /*
 
-    CharcaterModel
+    Character Model
 
 */
 
@@ -129,7 +123,6 @@ stock ResetPVariables(playerid)
         DestroyDynamic3DTextLabel(CharacterInfo[playerid][cNametagID]);
 
     SetPlayerColor(playerid, COLOUR_GRAY);
-
     return 1;
 }
 
@@ -452,45 +445,6 @@ stock ListPlayerStaffRoles(playerid)
     return roleList;
 }
 
-stock ShowLoginDialog(playerid)
-{
-    inline Response(pid, dialogid, response, listitem, string:text[])
-    {
-        #pragma unused listitem, dialogid, pid, text
-
-        if(!response)
-        {
-            KickEx(playerid, "Oyundan çýkýþ yapmaya karar verdiniz.");
-            return false;
-        }
-
-        SHA256_PassHash(text, AccountInfo[playerid][pName], text, sizeof(text));
-        printf("%s", text);
-        if(!strcmp(text, AccountInfo[playerid][pPassword]))
-        {
-            ServerMessage(playerid, "Ýþlem baþarýlý karakter giriþ yapma ekraný hazýrlanýyor.");
-            
-            CheckPlayerCharacters(playerid);
-            return true;
-        }
-        else
-        {
-            ServerMessage(playerid, "Hatalý þifre girdiniz. Tekrar deneyin.");
-            ShowLoginDialog(playerid);
-            return false;
-        }
-    }
-
-    Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_PASSWORD, sprintf("%s - Giriþ Yap", AccountInfo[playerid][pName]), "Kullanýcý paneli üzerinden belirlediðin þifren ile giriþ yapabilirsin.\nGiriþ yaptýðýn zaman karakter bilgilerini görüntüleyeceksin.", "Giriþ Yap", "Çýkýþ Yap");
-    return true;
-}
-
-stock LoadCharacter(playerid, sqlId)
-{
-    mysql_tquery(mysqlG, GetCharacterData(.characterId = sqlId), "OnPlayerLoadCharacter", "d", playerid);
-    return 1;
-}
-
 stock SlowCameraMod(playerid)
 {
     AccountInfo[playerid][pCameraZoom] = 4;
@@ -500,8 +454,10 @@ stock SlowCameraMod(playerid)
 
 stock CreateCharacterNametag(playerid)
 {
-	CharacterInfo[playerid][cNametagID] = CreateDynamic3DTextLabel(" ", -1, CharacterInfo[playerid][cX], CharacterInfo[playerid][cY], CharacterInfo[playerid][cZ] + 0.45, NAME_STREAM_DISTANCE, playerid, INVALID_VEHICLE_ID, 1, -1, -1, -1, NAME_STREAM_DISTANCE);
-	CharacterInfo[playerid][cNametagHeight] = 0;
+	if(!IsPlayerNPC(playerid))
+	{
+        CharacterInfo[playerid][cNametagID] = CreateDynamic3DTextLabel(" ", -1, CharacterInfo[playerid][cX], CharacterInfo[playerid][cY], CharacterInfo[playerid][cZ] + 0.45, NAME_STREAM_DISTANCE, playerid, INVALID_VEHICLE_ID, 1, -1, -1, -1, NAME_STREAM_DISTANCE);
+    }
 	return 1;
 }
 
@@ -515,9 +471,4 @@ stock UpdateCharacterNametag(playerid)
 		UpdateDynamic3DTextLabelText(CharacterInfo[playerid][cNametagID], -1, sprintf("%s (%d)", CharacterInfo[playerid][cName], playerid));
 	}
 	return 1;
-}
-
-stock CheckPlayerCharacters(playerid)
-{
-    mysql_tquery(mysqlG, GetCharacterData(.fields = "characters.character_id, characters.character_name, characters.character_skin", .page = AccountInfo[playerid][pCharacterPanelPage], .accountId = AccountInfo[playerid][pID]), "OnPlayerReceivedCharacters", "d", playerid);
 }

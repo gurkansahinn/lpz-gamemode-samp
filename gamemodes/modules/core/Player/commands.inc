@@ -57,11 +57,6 @@ CMD:mouse(playerid, params[])
 	return 1;
 }
 
-CMD:test(playerid, params[])
-{
-	return 1;
-}
-
 /* CMD:ekip(playerid)
 {
 	new bool:found = false;

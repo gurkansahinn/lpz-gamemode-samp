@@ -44,3 +44,5 @@ AddSimpleModel(-1,19379, -5711, "sahne2duvar.dff", "sahne2duvar.txd");
 AddSimpleModel(-1,19379, -5712, "sahne3.dff", "sahne3.txd");
 
 AddSimpleModel(-1,19379, -4003, "hud.dff", "hudgiris.txd");
+AddSimpleModel(-1,19379, -4004, "hud.dff", "hudgiris2.txd");
+AddSimpleModel(-1,19379, -4005, "hud.dff", "hudgiris3.txd");

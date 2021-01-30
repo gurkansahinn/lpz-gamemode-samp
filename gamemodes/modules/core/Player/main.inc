@@ -2,13 +2,17 @@
 
 #include <core/Player/globals>
 #include <core/Player/clouds>
-#include <core/Player/textdraw>
 #include <core/Player/colours>
 #include <core/Player/timers>
 #include <core/Player/functions>
 #include <core/Player/commands>
-#include <core/Player/header>
 #include <core/Player/callbacks>
+
+// Character Creator
+#include <core/Player/charactercreator/textdraw>
+
+// Login System
+#include <core/Player/login/main>
 
 hook OnPlayerConnect(playerid)
 {
@@ -24,19 +28,15 @@ hook OnPlayerConnect(playerid)
     Streamer_ToggleCameraUpdate(playerid, 1);
 	Streamer_ToggleIdleUpdate(playerid, 1);
 
-    ResetPVariables(playerid);
     CreateCharacterPanelTextdraw(playerid);
+    CreateCreatorFirstPanel(playerid);
+    
+    ResetPVariables(playerid);
 }
 
 hook OnPlayerDisconnect(playerid, reason)
 {
     ResetPVariables(playerid);
-}
-
-hook OnPlayerRequestClass(playerid, classid)
-{
-    ClearChat(playerid);
-    CheckPlayerAccount(playerid);
 }
 
 hook OnPlayerText(playerid, text[])
@@ -97,7 +97,8 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     {
         if(CharacterPanelInfo[playerid][0][cSqlID] == 0)
         {
-            // karakter oluþturma ekraný
+            HideCharacterPanel(playerid);
+            ShowCharacterCreatorFirstPanel(playerid);
         }
         else
         {
