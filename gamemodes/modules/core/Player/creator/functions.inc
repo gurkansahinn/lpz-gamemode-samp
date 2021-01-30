@@ -30,6 +30,16 @@ stock ShowCreatorNameDialog(playerid)
                 }
             }
 
+            for(new i = 0; i < sizeof(TurkishCharacters); i++)
+            {
+                if(strfind(text, TurkishCharacters[i]) != -1)
+                {
+                    ErrorMessage(playerid, "Karakter isminizde türkçe karakter kullanamazsýnýz.");
+                    ShowCreatorNameDialog(playerid);
+                    return 1;
+                }
+            }
+
             if(strfind(text, "_") == -1)
             {
                 ErrorMessage(playerid, "Karakter adýnýzýn formatý Ad_Soyad þeklinde olmalýdýr.");
@@ -51,7 +61,26 @@ stock ShowCreatorNameDialog(playerid)
     return 1;
 }
 
+stock ShowCreatorGenderDialog(playerid)
+{
+    inline Response(pid, dialogid, response, listitem, string:text[])
+    {
+        #pragma unused listitem, dialogid, pid, text
+
+        if(response)
+        {
+            AccountInfo[playerid][pCreatorGender] = listitem+1;
+            PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][27], Genders[AccountInfo[playerid][pCreatorGender]]);
+        }
+    }
+
+    Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_LIST, "Karakter Yaratma Paneli - Karakter Cinsiyeti", "Erkek\nKadýn", "Kaydet");
+    return 1;
+}
+
 stock ResetCreatorFirstData(playerid)
 {
     strunpack(AccountInfo[playerid][pCreatorName], "Belirtilmemis");
+
+    AccountInfo[playerid][pCreatorGender] = 0;
 }

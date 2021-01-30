@@ -230,7 +230,6 @@ stock CreateCharacterPanelTextdraw(playerid)
     PlayerTextDrawFont(playerid, CharacterPanel[playerid][18], 1);
     PlayerTextDrawSetProportional(playerid, CharacterPanel[playerid][18], 1);
     PlayerTextDrawSetShadow(playerid, CharacterPanel[playerid][18], 0);
-    PlayerTextDrawSetSelectable(playerid, CharacterPanel[playerid][18], true);
 
     CharacterPanel[playerid][19] = CreatePlayerTextDraw(playerid, 591.508300, 267.699645, "mdl-4003:b9");
     PlayerTextDrawLetterSize(playerid, CharacterPanel[playerid][19], 0.000000, 0.000000);

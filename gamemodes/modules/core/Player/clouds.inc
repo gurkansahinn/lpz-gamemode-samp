@@ -14,6 +14,7 @@ enum E_Account {
 
     pCreatorStage,
     pCreatorName[MAX_PLAYER_NAME],
+    pCreatorGender,
 
     pCameraZoom,
 
@@ -117,16 +118,37 @@ new PlayerStaffRoles[][] =
     "Helper"
 };
 
-/*new Genders[][] = 
+new TurkishCharacters[][] =
+{
+    "ð",
+    "Ð", 
+    "ç", 
+    "Ç", 
+    "þ", 
+    "Þ", 
+    "ü", 
+    "Ü", 
+    "ö", 
+    "Ö", 
+    "ý",
+    "Ý"
+};
+
+new Genders[][] = 
 {
     "Belirtilmemis",
     "Erkek",
-    "Kadýn"
-};*/
+    "Kadin"
+};
 
 new BlockedNames[][] =
 {
     "John_Wick",
     "Rick_Grimes",
-    "Daryl_Dixon"
+    "Daryl_Dixon",
+    "Fena_Sikerim",
+    "Anani_Sikeyim",
+    "Fenasi_Kerim",
+    "Alexis_Texas",
+    "Johnny_Sins"
 };
