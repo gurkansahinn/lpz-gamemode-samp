@@ -157,5 +157,9 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     {
         ShowCreatorGenderDialog(playerid);
     }
+    else if(playertextid == CharacterFirstCreator[playerid][29]) // Date
+    {
+        ShowCreatorDateDialog(playerid);
+    }
     return 1;
 }

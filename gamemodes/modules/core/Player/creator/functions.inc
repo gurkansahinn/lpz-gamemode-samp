@@ -78,9 +78,64 @@ stock ShowCreatorGenderDialog(playerid)
     return 1;
 }
 
+stock ShowCreatorDateDialog(playerid)
+{
+    inline Response(pid, dialogid, response, listitem, string:text[])
+    {
+        #pragma unused listitem, dialogid, pid, text
+
+        if(response)
+        {
+            new day, month, year;
+            static const monthDays[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+            
+            if (sscanf(text, "p</>ddd", day, month, year)) 
+            {
+                ErrorMessage(playerid, "GUN/AY/YIL formatýna uygun bir þekilde giriþ yapmalýsýnýz.");
+                ShowCreatorDateDialog(playerid);
+            }
+            else if(year < 1950 || year > 2004)
+            {
+                ErrorMessage(playerid, "Doðum yýlýnýz en fazla 2004 en az 1950 olabilir.");
+            }
+            else if(month < 1 || month > 12)
+            {
+                ErrorMessage(playerid, "Doðum ayý hatalý gözüküyor. Tekrar kontrol ediniz.");
+                ShowCreatorDateDialog(playerid);
+            }
+            else if(day < 1 || day > monthDays[month - 1])
+            {
+                ErrorMessage(playerid, "Bu ay içerisinde böyle bir gün bulunmuyor.");
+                ShowCreatorDateDialog(playerid);
+            }
+            else
+            {
+                strunpack(AccountInfo[playerid][pCreatorDate], text);
+                PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][29], AccountInfo[playerid][pCreatorDate]);
+            }
+        }
+    }
+
+    Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_INPUT, "Karakter Yaratma Paneli - Doðum Tarihi", "Karakterinizin doðum tarihini belirleyebilmeniz için kutucuða yazmanýz gerekiyor.\n\n\
+        -> Doðum yýlýnýz en fazla 2004 olabilir.\n\
+        -> Doðum yýlýnýz en az 1950 olabilir.\n\
+        -> Doðum yýlý formatý GUN/AY/YIL þeklinde olmalýdýr.", "Kaydet");
+    return 1;
+}
+
 stock ResetCreatorFirstData(playerid)
 {
     strunpack(AccountInfo[playerid][pCreatorName], "Belirtilmemis");
+    strunpack(AccountInfo[playerid][pCreatorDate], "00/00/0000");
 
+    AccountInfo[playerid][pCountry] = 0;
     AccountInfo[playerid][pCreatorGender] = 0;
+
+    PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][23], AccountInfo[playerid][pCreatorName]);
+    PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][27], Genders[AccountInfo[playerid][pCreatorGender]]);
+    PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][29], AccountInfo[playerid][pCreatorDate]);
+    
+    new countryID = AccountInfo[playerid][pCountry];
+    PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][34], Countries[countryID][cName]);
+    PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][38], Countries[countryID][cTxd]);
 }

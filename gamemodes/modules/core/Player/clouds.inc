@@ -15,8 +15,10 @@ enum E_Account {
     pCreatorStage,
     pCreatorName[MAX_PLAYER_NAME],
     pCreatorGender,
+    pCreatorDate[MAX_CHARACTER_DATE_LENGTH],
+    pCountry,
 
-    pCameraZoom,
+    pCameraZoom
 
 }
 
@@ -120,18 +122,28 @@ new PlayerStaffRoles[][] =
 
 new TurkishCharacters[][] =
 {
-    "ð",
-    "Ð", 
+    "?",
+    "?", 
     "ç", 
     "Ç", 
-    "þ", 
-    "Þ", 
+    "?", 
+    "?", 
     "ü", 
     "Ü", 
     "ö", 
     "Ö", 
-    "ý",
-    "Ý"
+    "?",
+    "?"
+};
+
+enum E_COUNTRIES {
+    cName[MAX_COUNTRIE_NAME_LENGTH],
+    cTxd[MAX_COUNTRIE_TXD_LENGTH]
+}
+
+new Countries[][E_COUNTRIES] =
+{
+    {"Belirtilmemis", "mdl-4004:ab7"}
 };
 
 new Genders[][] = 
