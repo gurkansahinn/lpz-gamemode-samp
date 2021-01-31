@@ -16,7 +16,8 @@ enum E_Account {
     pCreatorName[MAX_PLAYER_NAME],
     pCreatorGender,
     pCreatorDate[MAX_CHARACTER_DATE_LENGTH],
-    pCountry,
+    pCreatorCountry,
+    pCreatorLanguage,
 
     pCameraZoom
 
@@ -143,7 +144,55 @@ enum E_COUNTRIES {
 
 new Countries[][E_COUNTRIES] =
 {
-    {"Belirtilmemis", "mdl-4004:ab7"}
+    {"Belirtilmemis", "mdl-4004:ab7"},
+    {"Amerika", "mdl-4006:1abd"},
+    {"Ingiltere", "mdl-4006:2ing"},
+    {"Fransa", "mdl-4006:3fra"},
+    {"Almanya", "mdl-4006:4alm"},
+    {"Ispanya", "mdl-4006:5spain"},
+    {"Cin", "mdl-4006:6cin"},
+    {"Italya", "mdl-4006:7ital"},
+    {"Japonya", "mdl-4006:8japon"},
+    {"Rusya", "mdl-4006:9rus"},
+    {"Kanada", "mdl-4006:10kan"},
+    {"Avustralya", "mdl-4006:10Avu"},
+    {"Hindistan", "mdl-4006:11hin"},
+    {"Israil", "mdl-4006:12Isr"},
+    {"Yeni Zelanda", "mdl-4006:13Yen"},
+    {"Arnavutluk", "mdl-4006:14Arn"},
+    {"Belcika", "mdl-4006:15Bel"},
+    {"Brezilya", "mdl-4006:16Ber"},
+    {"Irlanda", "mdl-4006:17Irl"},
+    {"Isvec", "mdl-4006:18Isv"},
+    {"Kosova", "mdl-4006:19Kosv"},
+    {"Romanya", "mdl-4006:20rom"}
+};
+
+enum E_LANGUAGES {
+    lName[MAX_LANGUAGE_NAME_LENGTH],
+    lTxd[MAX_LANGUAGE_TXD_LENGTH]
+}
+
+new Languages[][E_LANGUAGES] =
+{
+    {"Belirtilmemis", "mdl-4004:ab7"},
+    {"Fransizca", "mdl-4006:3fra"},
+    {"Almanca", "mdl-4006:4alm"},
+    {"Ispanyolca", "mdl-4006:5spain"},
+    {"Cince", "mdl-4006:6cin"},
+    {"Italyanca", "mdl-4006:7ital"},
+    {"Japonca", "mdl-4006:8japon"},
+    {"Rusca", "mdl-4006:9rus"},
+    {"Hintce", "mdl-4006:11hin"},
+    {"Ibranice", "mdl-4006:12Isr"},
+    {"Maorice", "mdl-4006:13Yen"},
+    {"Arnavutca", "mdl-4006:14Arn"},
+    {"Felemenkce", "mdl-4006:15Bel"},
+    {"Portekizce", "mdl-4006:16Ber"},
+    {"Irlandaca", "mdl-4006:17Irl"},
+    {"Isvecce", "mdl-4006:18Isv"},
+    {"Arnavutca", "mdl-4006:19Kosv"},
+    {"Rumence", "mdl-4006:20rom"}
 };
 
 new Genders[][] = 

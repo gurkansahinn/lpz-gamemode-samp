@@ -161,5 +161,36 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     {
         ShowCreatorDateDialog(playerid);
     }
+    else if(playertextid == CharacterFirstCreator[playerid][34]) // Countrie
+    {
+        ShowCreatorCountrieDialog(playerid);
+    }
+    else if(playertextid == CharacterFirstCreator[playerid][37]) // Language
+    {
+        ShowCreatorLanguageDialog(playerid);
+    }
+    else if(playertextid == CharacterFirstCreator[playerid][41]) // First creator page save button.
+    {
+        if(!strcmp(AccountInfo[playerid][pCreatorName], "Belirtilmemis"))
+        {
+            ErrorMessage(playerid, "Karakter adýný doldurmadan devam edemezsin.");
+        }
+        else if(!AccountInfo[playerid][pCreatorGender])
+        {
+            ErrorMessage(playerid, "Karakter cinsiyetini belirlemeden devam edemezsiniz.");
+        }
+        else if(!strcmp(AccountInfo[playerid][pCreatorDate], "00/00/0000", true))
+        {
+            ErrorMessage(playerid, "Doðum tarihini doldurmadan devam edemezsiniz.");
+        }
+        else if(AccountInfo[playerid][pCreatorCountry] == 0)
+        {
+            ErrorMessage(playerid, "Karakterin doðum yerini seçmeden devam edemezsiniz.");
+        }
+        else if(AccountInfo[playerid][pCreatorLanguage] == 0)
+        {
+            ErrorMessage(playerid, "Karakter ek dilini seçmeden devam edemezsiniz.");
+        }
+    }
     return 1;
 }

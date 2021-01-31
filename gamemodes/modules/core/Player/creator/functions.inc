@@ -123,19 +123,84 @@ stock ShowCreatorDateDialog(playerid)
     return 1;
 }
 
+stock ShowCreatorCountrieDialog(playerid)
+{
+    inline Response(pid, dialogid, response, listitem, string:text[])
+    {
+        #pragma unused listitem, dialogid, pid, text
+
+        if(response)
+        {
+            if(listitem > sizeof(Countries))
+                return 1;
+
+            new id = listitem+1;
+            PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][34], Countries[id][cName]);
+            PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][39], Countries[id][cTxd]);
+
+            AccountInfo[playerid][pCreatorCountry] = id;
+        }
+    }
+
+    new dialogBody[sizeof(Countries) * MAX_COUNTRIE_NAME_LENGTH];
+
+    for(new i = 1; i < sizeof(Countries); i++)
+    {
+        format(dialogBody, sizeof(dialogBody), "%s%s\n", dialogBody, Countries[i][cName]);
+    }
+
+    Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_LIST, "Karakter Yaratma Paneli - Doðum Yeri", dialogBody, "Kaydet");
+    return 1;
+}
+
+stock ShowCreatorLanguageDialog(playerid)
+{
+    inline Response(pid, dialogid, response, listitem, string:text[])
+    {
+        #pragma unused listitem, dialogid, pid, text
+
+        if(response)
+        {
+            if(listitem > sizeof(Languages))
+                return 1;
+
+            new id = listitem+1;
+            PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][37], Languages[id][lName]);
+            PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][38], Languages[id][lTxd]);
+
+            AccountInfo[playerid][pCreatorLanguage] = id;
+        }
+    }
+
+    new dialogBody[sizeof(Languages) * MAX_LANGUAGE_NAME_LENGTH];
+
+    for(new i = 1; i < sizeof(Languages); i++)
+    {
+        format(dialogBody, sizeof(dialogBody), "%s%s\n", dialogBody, Languages[i][lName]);
+    }
+
+    Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_LIST, "Karakter Yaratma Paneli - Ek Dil", dialogBody, "Kaydet");
+    return 1;
+}
+
 stock ResetCreatorFirstData(playerid)
 {
     strunpack(AccountInfo[playerid][pCreatorName], "Belirtilmemis");
     strunpack(AccountInfo[playerid][pCreatorDate], "00/00/0000");
 
-    AccountInfo[playerid][pCountry] = 0;
+    AccountInfo[playerid][pCreatorLanguage] = 0;
+    AccountInfo[playerid][pCreatorCountry] = 0;
     AccountInfo[playerid][pCreatorGender] = 0;
 
     PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][23], AccountInfo[playerid][pCreatorName]);
     PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][27], Genders[AccountInfo[playerid][pCreatorGender]]);
     PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][29], AccountInfo[playerid][pCreatorDate]);
     
-    new countryID = AccountInfo[playerid][pCountry];
+    new countryID = AccountInfo[playerid][pCreatorCountry];
     PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][34], Countries[countryID][cName]);
-    PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][38], Countries[countryID][cTxd]);
+    PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][39], Countries[countryID][cTxd]);
+
+    new languageID = AccountInfo[playerid][pCreatorLanguage];
+    PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][37], Languages[languageID][lName]);
+    PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][38], Languages[languageID][lTxd]);
 }
