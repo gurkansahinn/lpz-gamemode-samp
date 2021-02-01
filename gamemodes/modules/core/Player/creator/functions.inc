@@ -52,7 +52,7 @@ stock ShowCreatorNameDialog(playerid)
         }
     }
 
-    Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_INPUT, "Karakter Yaratma Paneli - Karakter Adý", "Karakter adýný belirleyebilmeniz için kutucuða yazmanýz         gerekiyor.\n\n\
+    Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_INPUT, "Karakter Yaratma Paneli - Karakter Adý", "Karakter adýný belirleyebilmeniz için kutucuða yazmanýz gerekiyor.\n\n\
         -> Karakter isimleri maksimum 24 karakter olabilir.\n\
         -> Karakter ismi yazýlýrken _ koymak zorunlu deðil. Eðer yoksa sistem otomatik ekler.\n\
         -> Türkçe harf kullanýlamaz.\n\
@@ -87,7 +87,20 @@ stock ShowCreatorDateDialog(playerid)
         if(response)
         {
             new day, month, year;
-            static const monthDays[] = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+            static const monthDays[] = {
+                31, 
+                29, 
+                31, 
+                30, 
+                31, 
+                30, 
+                31, 
+                31, 
+                30, 
+                31, 
+                30, 
+                31
+            };
             
             if (sscanf(text, "p</>ddd", day, month, year)) 
             {
@@ -156,7 +169,8 @@ stock ShowCreatorCountrieDialog(playerid)
         }
     }
 
-    new dialogBody[ITEM_PER_PAGE * MAX_COUNTRIE_NAME_LENGTH], count = 0;
+    new dialogBody[ITEM_PER_PAGE * MAX_COUNTRIE_NAME_LENGTH], 
+        count = 0;
 
     for(new i = ((AccountInfo[playerid][pDialogPage] - 1) * ITEM_PER_PAGE); i < sizeof(Countries); i++)
     {
@@ -214,7 +228,8 @@ stock ShowCreatorLanguageDialog(playerid)
         }
     }
 
-    new dialogBody[ITEM_PER_PAGE * MAX_LANGUAGE_NAME_LENGTH], count = 0;
+    new dialogBody[ITEM_PER_PAGE * MAX_LANGUAGE_NAME_LENGTH], 
+        count = 0;
 
     for(new i = ((AccountInfo[playerid][pDialogPage] - 1) * ITEM_PER_PAGE); i < sizeof(Languages); i++)
     {
@@ -259,7 +274,7 @@ stock ShowCreatorEyeColour(playerid)
             }
             else
             {
-                new colourID = ((AccountInfo[playerid][pDialogPage] - 1) * ITEM_PER_PAGE) + listitem+1;
+                new colourID = ((AccountInfo[playerid][pDialogPage] - 1) * ITEM_PER_PAGE) + listitem;
 
                 AccountInfo[playerid][pCreatorColour] = colourID;
                 PlayerTextDrawSetString(playerid, CharacterSubFirstCreator[playerid][43], Colours[colourID][coName]);
@@ -269,9 +284,8 @@ stock ShowCreatorEyeColour(playerid)
         }
     }
 
-    new dialogBody[ITEM_PER_PAGE * 12 + 9];
-
-    new count = 0;
+    new dialogBody[ITEM_PER_PAGE * MAX_COLOR_NAME_LENGTH + MAX_COLOR_EMBED_LENGTH], 
+        count = 0;
 
     for(new i = ((AccountInfo[playerid][pDialogPage] - 1) * ITEM_PER_PAGE); i < sizeof(Colours); i++)
     {
@@ -293,6 +307,90 @@ stock ShowCreatorEyeColour(playerid)
 	}
 
     Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_LIST, "Karakter Yaratma Paneli - Göz Rengi", dialogBody, "Kaydet");
+    return 1;
+}
+
+stock ShowCreatorWeight(playerid)
+{
+    inline Response(pid, dialogid, response, listitem, string:text[])
+    {
+        #pragma unused listitem, dialogid, pid, text
+
+        if(response)
+        {
+            new weight;
+            if(sscanf(text, "d", weight))
+            {
+                ErrorMessage(playerid, "Karakterinizin kilosunu uygun formata göre doldurmalýsýnýz.");
+                ShowCreatorWeight(playerid);
+                return 1;
+            }
+
+            if(weight < 40)
+            {
+                ErrorMessage(playerid, "Karakterinizin kilosu en az 40 olabilir.");
+                ShowCreatorWeight(playerid);
+                return 1;
+            }
+
+            if(weight > 150)
+            {
+                ErrorMessage(playerid, "Karakterinizin kilosu en fazla 150 olabilir.");
+                ShowCreatorWeight(playerid);
+                return 1;
+            }
+
+            AccountInfo[playerid][pCreatorWeight] = weight;
+            PlayerTextDrawSetString(playerid, CharacterSubFirstCreator[playerid][38], sprintf("%d_KG", weight));
+        }
+    }
+
+    Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_INPUT, "Karakter Yaratma Paneli - Kilo", "Karakterinizin kilosunu belirleyebilmeniz için kutucuða yazmanýz gerekiyor.\n\n\
+        -> Kilo yazým formatýnýz 00 þeklinde olmalý. (örneðin: 69 veya 100)\n\
+        -> Karakterinizin kilosu maksimum 150 olabilir.\n\
+        -> Karakterinizin kilosu minimum 40 olabilir.", "Kaydet");
+    return 1;
+}
+
+stock ShowCreatorHeight(playerid)
+{
+    inline Response(pid, dialogid, response, listitem, string:text[])
+    {
+        #pragma unused listitem, dialogid, pid, text
+
+        if(response)
+        {
+            new height;
+            if(sscanf(text, "d", height))
+            {
+                ErrorMessage(playerid, "Karakterinizin uzunluðunu uygun formata göre doldurmalýsýnýz.");
+                ShowCreatorHeight(playerid);
+                return 1;
+            }
+
+            if(height > 200)
+            {
+                ErrorMessage(playerid, "Boy 2 metreden uzun olamaz.");
+                ShowCreatorHeight(playerid);
+                return 1;
+            }
+
+            if(height < 130)
+            {
+                ErrorMessage(playerid, "Boy 1 metre 30 santimetreden kýsa olamaz.");
+                ShowCreatorHeight(playerid);
+                return 1;
+            }
+
+            AccountInfo[playerid][pCreatorHeight] = height;
+            PlayerTextDrawSetString(playerid, CharacterSubFirstCreator[playerid][40], sprintf("%d_KG", height));
+        }
+    }
+
+    Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_INPUT, "Karakter Yaratma Paneli - Uzunluk", "Karakterinizin uzunluðunu belirleyebilmeniz için kutucuða yazmanýz gerekiyor.\n\n\
+        -> Uzunluk yazým formatýnýz 000 þeklinde olmalý. (örneðin: 179, bu örneðe göre 1(metre) 79(santimetre)'yi temsil eder)\n\
+        -> Karakter uzunluðunuz en fazla 2 metre olabilir.\n\
+        -> Karakter uzunluðunuz en az 1 metre 30 santim olabilir.", "Kaydet");
     return 1;
 }
 
@@ -321,8 +419,14 @@ stock ResetCreatorFirstData(playerid)
 stock ResetCreatorSubFirstData(playerid)
 {
     AccountInfo[playerid][pCreatorSkin] = INVALID_PLAYER_ID;
-    PlayerTextDrawSetString(playerid, CharacterSubFirstCreator[playerid][36], "Sec");
+    PlayerTextDrawSetString(playerid, CharacterSubFirstCreator[playerid][36], "Sec"); 
 
     AccountInfo[playerid][pCreatorColour] = 0;
     PlayerTextDrawSetString(playerid, CharacterSubFirstCreator[playerid][43], Colours[0][coName]);
+
+    AccountInfo[playerid][pCreatorWeight] = 0;
+    PlayerTextDrawSetString(playerid, CharacterSubFirstCreator[playerid][38], "00_KG");
+
+    AccountInfo[playerid][pCreatorHeight] = 0;
+    PlayerTextDrawSetString(playerid, CharacterSubFirstCreator[playerid][40], "00_CM");
 }

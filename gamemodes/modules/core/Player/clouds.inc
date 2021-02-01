@@ -22,6 +22,8 @@ enum E_Account {
     pCreatorLanguage,
     pCreatorSkin,
     pCreatorColour,
+    Float:pCreatorWeight,
+    Float:pCreatorHeight,
 
     pCameraZoom
 
@@ -139,18 +141,7 @@ new Skins[][E_SKIN] =
 
 new TurkishCharacters[][] =
 {
-    "?",
-    "?", 
-    "ç", 
-    "Ç", 
-    "?", 
-    "?", 
-    "ü", 
-    "Ü", 
-    "ö", 
-    "Ö", 
-    "?",
-    "?"
+    "ð", "Ð", "ç", "Ç", "þ", "Þ", "ü", "Ü", "ö", "Ö", "ý", "Ý"
 };
 
 enum E_COUNTRIES {
@@ -232,8 +223,8 @@ new BlockedNames[][] =
 
 enum ColourData
 {
-	coName[12],
-	coEmbedValue[9]
+	coName[MAX_COLOR_NAME_LENGTH],
+	coEmbedValue[MAX_COLOR_EMBED_LENGTH]
 }
 new Colours[][ColourData] = 
 {

@@ -99,9 +99,6 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     {
         if(CharacterPanelInfo[playerid][0][cSqlID] == 0)
         {
-            ResetCreatorFirstData(playerid);
-            ResetCreatorSubFirstData(playerid);
-
             HideCharacterPanel(playerid);
             ShowCharacterCreatorFirstPanel(playerid);
         }
@@ -118,9 +115,6 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     {
         if(CharacterPanelInfo[playerid][1][cSqlID] == 0)
         {
-            ResetCreatorFirstData(playerid);
-            ResetCreatorSubFirstData(playerid);
-
             HideCharacterPanel(playerid);
             ShowCharacterCreatorFirstPanel(playerid);
         }
@@ -137,9 +131,6 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     {
         if(CharacterPanelInfo[playerid][2][cSqlID] == 0)
         {
-            ResetCreatorFirstData(playerid);
-            ResetCreatorSubFirstData(playerid);
-
             HideCharacterPanel(playerid);
             ShowCharacterCreatorFirstPanel(playerid);
         }
@@ -156,6 +147,9 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     // Character Creator
     else if(playertextid == CharacterFirstCreator[playerid][31]) // Back Button
     {
+        ResetCreatorFirstData(playerid);
+        ResetCreatorSubFirstData(playerid);
+
         HideCharacterCreatorFirstPanel(playerid);
         CheckPlayerCharacters(playerid); 
     }
@@ -207,7 +201,7 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
             ShowCreatorSubFirstPage(playerid);
         }
     }
-    else if(playertextid == CharacterSubFirstCreator[playerid][36])
+    else if(playertextid == CharacterSubFirstCreator[playerid][36]) // Creator select skin button.
     {
         new List:skins = list_new();
 
@@ -219,9 +213,22 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
         HideCreatorSubFirstPage(playerid);
         ShowModelSelectionMenu(playerid, "Karakter Gorunusu", CREATOR_SELECT_SKIN, skins);
     }
-    else if(playertextid == CharacterSubFirstCreator[playerid][43])
+    else if(playertextid == CharacterSubFirstCreator[playerid][43]) // Creator eye colour.
     {
         ShowCreatorEyeColour(playerid);
+    }
+    else if(playertextid == CharacterSubFirstCreator[playerid][38]) // Creator weight selection.
+    {
+        ShowCreatorWeight(playerid);
+    }
+    else if(playertextid == CharacterSubFirstCreator[playerid][40]) // Creator height selection.
+    {
+        ShowCreatorHeight(playerid);
+    }
+    else if(playertextid == CharacterSubFirstCreator[playerid][48]) // Creator sub first page back button.
+    {
+        HideCreatorSubFirstPage(playerid);
+        ShowCharacterCreatorFirstPanel(playerid);
     }
     return 1;
 }
