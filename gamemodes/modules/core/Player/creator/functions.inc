@@ -181,7 +181,7 @@ stock ShowCreatorCountrieDialog(playerid)
         }
         else
         {
-			format(dialogBody, sizeof(dialogBody), "%s" EMBED_GOLD "Sonraki Sayfa\n", dialogBody);
+			format(dialogBody, sizeof(dialogBody), "%s" EMBED_DANDELION "Sonraki Sayfa\n", dialogBody);
 			break;
         }
     }
@@ -240,7 +240,7 @@ stock ShowCreatorLanguageDialog(playerid)
         }
         else
         {
-			format(dialogBody, sizeof(dialogBody), "%s" EMBED_GOLD "Sonraki Sayfa\n", dialogBody);
+			format(dialogBody, sizeof(dialogBody), "%s" EMBED_DANDELION "Sonraki Sayfa\n", dialogBody);
 			break;
         }
     }
@@ -296,7 +296,7 @@ stock ShowCreatorEyeColour(playerid)
 		}
 		else
 		{
-			format(dialogBody, sizeof(dialogBody), "%s" EMBED_GOLD "Sonraki Sayfa\n", dialogBody);
+			format(dialogBody, sizeof(dialogBody), "%s" EMBED_DANDELION "Sonraki Sayfa\n", dialogBody);
 			break;
 		}
     }
