@@ -131,23 +131,51 @@ stock ShowCreatorCountrieDialog(playerid)
 
         if(response)
         {
-            if(listitem > sizeof(Countries))
-                return 1;
+            if(strfind(text, "Sonraki Sayfa") != -1)
+            {
+                AccountInfo[playerid][pDialogPage]++;
+                ShowCreatorCountrieDialog(playerid);
+            }
+            else if(strfind(text, "Önceki Sayfa") != -1)
+            {
+                AccountInfo[playerid][pDialogPage]--;
+                ShowCreatorCountrieDialog(playerid);
+            }
+            else
+            {
+                if(listitem > sizeof(Countries))
+                    return 1;
 
-            new id = listitem+1;
-            PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][34], Countries[id][cName]);
-            PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][39], Countries[id][cTxd]);
+                new id = ((AccountInfo[playerid][pDialogPage] - 1) * ITEM_PER_PAGE) + listitem;
+                PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][34], Countries[id][cName]);
+                PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][39], Countries[id][cTxd]);
 
-            AccountInfo[playerid][pCreatorCountry] = id;
+                AccountInfo[playerid][pCreatorCountry] = id;
+                AccountInfo[playerid][pDialogPage] = 1;
+            }
         }
     }
 
-    new dialogBody[sizeof(Countries) * MAX_COUNTRIE_NAME_LENGTH];
+    new dialogBody[ITEM_PER_PAGE * MAX_COUNTRIE_NAME_LENGTH], count = 0;
 
-    for(new i = 1; i < sizeof(Countries); i++)
+    for(new i = ((AccountInfo[playerid][pDialogPage] - 1) * ITEM_PER_PAGE); i < sizeof(Countries); i++)
     {
-        format(dialogBody, sizeof(dialogBody), "%s%s\n", dialogBody, Countries[i][cName]);
+        if(count < ITEM_PER_PAGE)
+		{
+            format(dialogBody, sizeof(dialogBody), "%s%s\n", dialogBody, Countries[i][cName]);
+            count++;
+        }
+        else
+        {
+			format(dialogBody, sizeof(dialogBody), "%s" EMBED_GOLD "Sonraki Sayfa\n", dialogBody);
+			break;
+        }
     }
+
+    if(AccountInfo[playerid][pDialogPage] > 1)
+	{
+		format(dialogBody, sizeof(dialogBody), "%s" EMBED_TOMATO "Önceki Sayfa", dialogBody);
+	}
 
     Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_LIST, "Karakter Yaratma Paneli - Doðum Yeri", dialogBody, "Kaydet");
     return 1;
@@ -161,25 +189,110 @@ stock ShowCreatorLanguageDialog(playerid)
 
         if(response)
         {
-            if(listitem > sizeof(Languages))
-                return 1;
+            if(strfind(text, "Sonraki Sayfa") != -1)
+            {
+                AccountInfo[playerid][pDialogPage]++;
+                ShowCreatorLanguageDialog(playerid);
+            }
+            else if(strfind(text, "Önceki Sayfa") != -1)
+            {
+                AccountInfo[playerid][pDialogPage]--;
+                ShowCreatorLanguageDialog(playerid);
+            }
+            else
+            {
+                if(listitem > sizeof(Languages))
+                    return 1;
 
-            new id = listitem+1;
-            PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][37], Languages[id][lName]);
-            PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][38], Languages[id][lTxd]);
+                new id = ((AccountInfo[playerid][pDialogPage] - 1) * ITEM_PER_PAGE) + listitem;
+                PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][37], Languages[id][lName]);
+                PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][38], Languages[id][lTxd]);
 
-            AccountInfo[playerid][pCreatorLanguage] = id;
+                AccountInfo[playerid][pCreatorLanguage] = id;
+                AccountInfo[playerid][pDialogPage] = 1;
+            }
         }
     }
 
-    new dialogBody[sizeof(Languages) * MAX_LANGUAGE_NAME_LENGTH];
+    new dialogBody[ITEM_PER_PAGE * MAX_LANGUAGE_NAME_LENGTH], count = 0;
 
-    for(new i = 1; i < sizeof(Languages); i++)
+    for(new i = ((AccountInfo[playerid][pDialogPage] - 1) * ITEM_PER_PAGE); i < sizeof(Languages); i++)
     {
-        format(dialogBody, sizeof(dialogBody), "%s%s\n", dialogBody, Languages[i][lName]);
+        if(count < ITEM_PER_PAGE)
+		{
+            format(dialogBody, sizeof(dialogBody), "%s%s\n", dialogBody, Languages[i][lName]);
+            count++;
+        }
+        else
+        {
+			format(dialogBody, sizeof(dialogBody), "%s" EMBED_GOLD "Sonraki Sayfa\n", dialogBody);
+			break;
+        }
     }
 
+    if(AccountInfo[playerid][pDialogPage] > 1)
+	{
+		format(dialogBody, sizeof(dialogBody), "%s" EMBED_TOMATO "Önceki Sayfa", dialogBody);
+	}
+
     Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_LIST, "Karakter Yaratma Paneli - Ek Dil", dialogBody, "Kaydet");
+    return 1;
+}
+
+stock ShowCreatorEyeColour(playerid)
+{
+    inline Response(pid, dialogid, response, listitem, string:text[])
+    {
+        #pragma unused listitem, dialogid, pid, text
+
+        if(response)
+        {
+            if(strfind(text, "Sonraki Sayfa") != -1)
+            {
+                AccountInfo[playerid][pDialogPage]++;
+                ShowCreatorEyeColour(playerid);
+            }
+            else if(strfind(text, "Önceki Sayfa") != -1)
+            {
+                AccountInfo[playerid][pDialogPage]--;
+                ShowCreatorEyeColour(playerid);
+            }
+            else
+            {
+                new colourID = ((AccountInfo[playerid][pDialogPage] - 1) * ITEM_PER_PAGE) + listitem+1;
+
+                AccountInfo[playerid][pCreatorColour] = colourID;
+                PlayerTextDrawSetString(playerid, CharacterSubFirstCreator[playerid][43], Colours[colourID][coName]);
+
+                AccountInfo[playerid][pDialogPage] = 1;
+            }
+        }
+    }
+
+    new dialogBody[ITEM_PER_PAGE * 12 + 9];
+
+    new count = 0;
+
+    for(new i = ((AccountInfo[playerid][pDialogPage] - 1) * ITEM_PER_PAGE); i < sizeof(Colours); i++)
+    {
+        if(count < ITEM_PER_PAGE)
+		{
+			format(dialogBody, sizeof(dialogBody), "%s%s%s\n", dialogBody, Colours[i][coEmbedValue], Colours[i][coName]);
+			count++;
+		}
+		else
+		{
+			format(dialogBody, sizeof(dialogBody), "%s" EMBED_GOLD "Sonraki Sayfa\n", dialogBody);
+			break;
+		}
+    }
+
+	if(AccountInfo[playerid][pDialogPage] > 1)
+	{
+		format(dialogBody, sizeof(dialogBody), "%s" EMBED_TOMATO "Önceki Sayfa", dialogBody);
+	}
+
+    Dialog_ShowCallback(playerid, using inline Response, DIALOG_STYLE_LIST, "Karakter Yaratma Paneli - Göz Rengi", dialogBody, "Kaydet");
     return 1;
 }
 
@@ -203,4 +316,13 @@ stock ResetCreatorFirstData(playerid)
     new languageID = AccountInfo[playerid][pCreatorLanguage];
     PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][37], Languages[languageID][lName]);
     PlayerTextDrawSetString(playerid, CharacterFirstCreator[playerid][38], Languages[languageID][lTxd]);
+}
+
+stock ResetCreatorSubFirstData(playerid)
+{
+    AccountInfo[playerid][pCreatorSkin] = INVALID_PLAYER_ID;
+    PlayerTextDrawSetString(playerid, CharacterSubFirstCreator[playerid][36], "Sec");
+
+    AccountInfo[playerid][pCreatorColour] = 0;
+    PlayerTextDrawSetString(playerid, CharacterSubFirstCreator[playerid][43], Colours[0][coName]);
 }

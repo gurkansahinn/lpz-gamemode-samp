@@ -9,6 +9,8 @@ enum E_Account {
 	pStateFlags,
     pStaffRoles,
 
+    pDialogPage,
+
     pCharacterPanelPage,
     pSelectedCharacter,
 
@@ -18,6 +20,8 @@ enum E_Account {
     pCreatorDate[MAX_CHARACTER_DATE_LENGTH],
     pCreatorCountry,
     pCreatorLanguage,
+    pCreatorSkin,
+    pCreatorColour,
 
     pCameraZoom
 
@@ -121,6 +125,18 @@ new PlayerStaffRoles[][] =
     "Helper"
 };
 
+enum E_SKIN {
+    sID
+}
+
+new Skins[][E_SKIN] =
+{
+    {1},
+    {2},
+    {95},
+    {43}
+};
+
 new TurkishCharacters[][] =
 {
     "?",
@@ -212,4 +228,15 @@ new BlockedNames[][] =
     "Fenasi_Kerim",
     "Alexis_Texas",
     "Johnny_Sins"
+};
+
+enum ColourData
+{
+	coName[12],
+	coEmbedValue[9]
+}
+new Colours[][ColourData] = 
+{
+	{"Yok", "{000000}"},
+    {"Kahverengi", "{964B00}"}
 };

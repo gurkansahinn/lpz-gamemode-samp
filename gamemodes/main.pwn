@@ -71,16 +71,3 @@ public OnPlayerRequestClass(playerid, classid)
     TogglePlayerSpectating(playerid, true);
     return 1;
 }
-
-public OnModelSelectionResponse(playerid, extraid, index, modelid, response)
-{
-    if(extraid == MODEL_SELECTION_SKIN_MENU)
-    {
-        if(response == MODEL_RESPONSE_SELECT)
-        {
-            ServerMessage(playerid, sprintf("%d'yi seçtin.", modelid));
-            return 1;
-        }
-    }
-    return 1;
-}

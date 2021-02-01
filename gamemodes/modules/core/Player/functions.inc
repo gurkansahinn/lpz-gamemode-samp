@@ -107,6 +107,7 @@ stock ResetPVariables(playerid)
 	AccountInfo[playerid][pStateFlags] = 0;
     AccountInfo[playerid][pStaffRoles] = 0;
 
+    AccountInfo[playerid][pDialogPage] = 1;
     AccountInfo[playerid][pCharacterPanelPage] = 1;
     AccountInfo[playerid][pCameraZoom] = 0;
 

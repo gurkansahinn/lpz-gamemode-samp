@@ -30,7 +30,8 @@ hook OnPlayerConnect(playerid)
 
     CreateCharacterPanelTextdraw(playerid);
     CreateCreatorFirstPanel(playerid);
-    
+    CreateCreatorSubFirstPage(playerid);
+
     ResetPVariables(playerid);
 }
 
@@ -98,6 +99,9 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     {
         if(CharacterPanelInfo[playerid][0][cSqlID] == 0)
         {
+            ResetCreatorFirstData(playerid);
+            ResetCreatorSubFirstData(playerid);
+
             HideCharacterPanel(playerid);
             ShowCharacterCreatorFirstPanel(playerid);
         }
@@ -114,6 +118,9 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     {
         if(CharacterPanelInfo[playerid][1][cSqlID] == 0)
         {
+            ResetCreatorFirstData(playerid);
+            ResetCreatorSubFirstData(playerid);
+
             HideCharacterPanel(playerid);
             ShowCharacterCreatorFirstPanel(playerid);
         }
@@ -130,6 +137,9 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     {
         if(CharacterPanelInfo[playerid][2][cSqlID] == 0)
         {
+            ResetCreatorFirstData(playerid);
+            ResetCreatorSubFirstData(playerid);
+
             HideCharacterPanel(playerid);
             ShowCharacterCreatorFirstPanel(playerid);
         }
@@ -190,6 +200,43 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
         else if(AccountInfo[playerid][pCreatorLanguage] == 0)
         {
             ErrorMessage(playerid, "Karakter ek dilini seçmeden devam edemezsiniz.");
+        }
+        else
+        {
+            HideCharacterCreatorFirstPanel(playerid);
+            ShowCreatorSubFirstPage(playerid);
+        }
+    }
+    else if(playertextid == CharacterSubFirstCreator[playerid][36])
+    {
+        new List:skins = list_new();
+
+        for(new i = 0; i < sizeof(Skins); i++)
+        {
+            AddModelMenuItem(skins, Skins[i][sID]);
+        }
+
+        HideCreatorSubFirstPage(playerid);
+        ShowModelSelectionMenu(playerid, "Karakter Gorunusu", CREATOR_SELECT_SKIN, skins);
+    }
+    else if(playertextid == CharacterSubFirstCreator[playerid][43])
+    {
+        ShowCreatorEyeColour(playerid);
+    }
+    return 1;
+}
+
+public OnModelSelectionResponse(playerid, extraid, index, modelid, response)
+{
+    if(extraid == CREATOR_SELECT_SKIN)
+    {
+        if(response == MODEL_RESPONSE_SELECT)
+        {
+            AccountInfo[playerid][pCreatorSkin] = modelid;
+            PlayerTextDrawSetString(playerid, CharacterSubFirstCreator[playerid][36], "SECILDI");
+
+            ShowCreatorSubFirstPage(playerid);
+            return 1;
         }
     }
     return 1;

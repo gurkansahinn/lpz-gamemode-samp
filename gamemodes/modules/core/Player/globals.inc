@@ -20,4 +20,4 @@
 
 #define INVALID_TIMER_ID (0)
 
-#define MODEL_SELECTION_SKIN_MENU (0)
+#define CREATOR_SELECT_SKIN (0)
