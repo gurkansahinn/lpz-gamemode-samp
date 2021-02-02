@@ -1,8 +1,11 @@
 #define MAX_FIRST_CHARACTER_CREATOR_TEXTDRAW (45)
 new PlayerText:CharacterFirstCreator[MAX_PLAYERS][MAX_FIRST_CHARACTER_CREATOR_TEXTDRAW];
 
-#define MAX_FIRST_CHARACTER_CREATOR_SUBFIRST_TEXTDRAW (49)
-new PlayerText:CharacterSubFirstCreator[MAX_PLAYERS][MAX_FIRST_CHARACTER_CREATOR_SUBFIRST_TEXTDRAW];
+#define MAX_FIRST_CHARACTER_CREATOR_SUB_TEXTDRAW (49)
+new PlayerText:CharacterSubFirstCreator[MAX_PLAYERS][MAX_FIRST_CHARACTER_CREATOR_SUB_TEXTDRAW];
+
+#define MAX_THIRD_CHARACTER_CREATOR_SUB_TEXTDRAW (42)
+new PlayerText:CharacterSubThirdCreator[MAX_PLAYERS][MAX_THIRD_CHARACTER_CREATOR_SUB_TEXTDRAW];
 
 stock CreateCreatorFirstPanel(playerid)
 {
@@ -1148,6 +1151,515 @@ stock CreateCreatorSubFirstPage(playerid)
     PlayerTextDrawSetSelectable(playerid, CharacterSubFirstCreator[playerid][48], true);
 }
 
+stock CreateCreatorSubThirdPage(playerid)
+{
+    CharacterSubThirdCreator[playerid][0] = CreatePlayerTextDraw(playerid, 344.152374, -1.916669, "mdl-4003:hud3");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][0], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][0], 287.000000, 452.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][0], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][0], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][0], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][0], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][0], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][0], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][0], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][0], 0);
+
+    CharacterSubThirdCreator[playerid][1] = CreatePlayerTextDraw(playerid, 339.494659, -11.249996, "mdl-4004:aa1");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][1], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][1], 297.000000, 193.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][1], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][1], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][1], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][1], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][1], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][1], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][1], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][1], 0);
+
+    CharacterSubThirdCreator[playerid][2] = CreatePlayerTextDraw(playerid, 355.892883, 43.583312, "mdl-4004:aa2");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][2], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][2], 260.000000, 88.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][2], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][2], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][2], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][2], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][2], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][2], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][2], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][2], 0);
+
+    CharacterSubThirdCreator[playerid][3] = CreatePlayerTextDraw(playerid, 400.982604, 145.783447, "mdl-4004:aa7");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][3], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][3], 10.000000, 27.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][3], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][3], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][3], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][3], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][3], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][3], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][3], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][3], 0);
+
+    CharacterSubThirdCreator[playerid][4] = CreatePlayerTextDraw(playerid, 544.201721, 146.366821, "mdl-4004:aa7");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][4], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][4], 10.000000, 27.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][4], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][4], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][4], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][4], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][4], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][4], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][4], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][4], 0);
+
+    CharacterSubThirdCreator[playerid][5] = CreatePlayerTextDraw(playerid, 470.963958, 145.783477, "mdl-4004:aa7");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][5], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][5], 10.000000, 27.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][5], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][5], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][5], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][5], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][5], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][5], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][5], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][5], 0);
+
+    CharacterSubThirdCreator[playerid][6] = CreatePlayerTextDraw(playerid, 473.688446, 150.116653, "mdl-4003:hud6");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][6], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][6], 47.000000, 19.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][6], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][6], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][6], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][6], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][6], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][6], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][6], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][6], 0);
+
+    CharacterSubThirdCreator[playerid][7] = CreatePlayerTextDraw(playerid, 441.948913, 120.683303, "mdl-4005:aa4");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][7], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][7], 81.000000, 70.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][7], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][7], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][7], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][7], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][7], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][7], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][7], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][7], 0);
+
+    CharacterSubThirdCreator[playerid][8] = CreatePlayerTextDraw(playerid, 546.772583, 150.666656, "mdl-4003:HUD6");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][8], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][8], 51.000000, 18.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][8], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][8], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][8], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][8], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][8], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][8], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][8], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][8], 0);
+
+    CharacterSubThirdCreator[playerid][9] = CreatePlayerTextDraw(playerid, 515.358398, 120.683334, "mdl-4004:aa5");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][9], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][9], 81.000000, 70.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][9], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][9], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][9], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][9], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][9], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][9], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][9], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][9], 0);
+
+    CharacterSubThirdCreator[playerid][10] = CreatePlayerTextDraw(playerid, 404.004760, 149.783264, "mdl-4003:HUD6");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][10], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][10], 43.000000, 18.230005);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][10], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][10], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][10], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][10], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][10], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][10], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][10], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][10], 0);
+
+    CharacterSubThirdCreator[playerid][11] = CreatePlayerTextDraw(playerid, 372.502502, 120.683341, "mdl-4005:aa3");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][11], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][11], 81.000000, 70.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][11], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][11], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][11], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][11], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][11], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][11], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][11], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][11], 0);
+
+    CharacterSubThirdCreator[playerid][12] = CreatePlayerTextDraw(playerid, 413.279144, 184.283370, "mdl-4004:aa7");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][12], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][12], 13.000000, 13.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][12], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][12], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][12], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][12], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][12], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][12], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][12], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][12], 0);
+
+    CharacterSubThirdCreator[playerid][13] = CreatePlayerTextDraw(playerid, 483.442199, 184.033050, "mdl-4004:aa7");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][13], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][13], 13.000000, 13.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][13], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][13], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][13], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][13], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][13], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][13], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][13], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][13], 0);
+
+    CharacterSubThirdCreator[playerid][14] = CreatePlayerTextDraw(playerid, 558.249023, 183.949951, "mdl-4004:aa7");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][14], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][14], 13.000000, 13.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][14], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][14], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][14], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][14], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][14], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][14], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][14], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][14], 0);
+
+    CharacterSubThirdCreator[playerid][15] = CreatePlayerTextDraw(playerid, 418.317840, 187.983383, "mdl-4004:aa7");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][15], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][15], 148.000000, 4.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][15], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][15], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][15], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][15], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][15], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][15], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][15], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][15], 0);
+
+    CharacterSubThirdCreator[playerid][16] = CreatePlayerTextDraw(playerid, 415.290313, 186.216674, "mdl-4003:hud6");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][16], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][16], 9.000000, 9.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][16], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][16], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][16], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][16], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][16], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][16], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][16], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][16], 0);
+
+    CharacterSubThirdCreator[playerid][17] = CreatePlayerTextDraw(playerid, 485.300140, 186.216674, "mdl-4004:aa8");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][17], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][17], 9.000000, 9.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][17], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][17], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][17], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][17], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][17], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][17], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][17], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][17], 0);
+
+    CharacterSubThirdCreator[playerid][18] = CreatePlayerTextDraw(playerid, 560.300781, 186.516677, "mdl-4003:hud6");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][18], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][18], 9.000000, 8.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][18], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][18], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][18], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][18], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][18], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][18], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][18], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][18], 0);
+
+    CharacterSubThirdCreator[playerid][19] = CreatePlayerTextDraw(playerid, 386.469940, 210.416702, "mdl-4004:aa7");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][19], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][19], 209.960021, 4.010000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][19], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][19], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][19], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][19], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][19], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][19], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][19], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][19], 0);
+
+    CharacterSubThirdCreator[playerid][20] = CreatePlayerTextDraw(playerid, 386.506927, 213.266723, "mdl-4003:hud6");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][20], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][20], 210.000000, 189.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][20], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][20], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][20], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][20], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][20], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][20], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][20], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][20], 0);
+
+    CharacterSubThirdCreator[playerid][21] = CreatePlayerTextDraw(playerid, 452.571716, 359.850219, "mdl-4004:ab10");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][21], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][21], 80.000000, 45.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][21], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][21], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][21], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][21], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][21], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][21], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][21], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][21], 0);
+    PlayerTextDrawSetSelectable(playerid, CharacterSubThirdCreator[playerid][21], true);
+
+    CharacterSubThirdCreator[playerid][22] = CreatePlayerTextDraw(playerid, 396.968322, 359.850219, "mdl-4005:aba14");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][22], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][22], 80.000000, 45.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][22], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][22], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][22], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][22], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][22], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][22], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][22], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][22], 0);
+    PlayerTextDrawSetSelectable(playerid, CharacterSubThirdCreator[playerid][22], true);
+
+    CharacterSubThirdCreator[playerid][23] = CreatePlayerTextDraw(playerid, 386.332916, 401.735473, "mdl-4004:aa7");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][23], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][23], 210.639099, 3.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][23], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][23], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][23], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][23], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][23], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][23], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][23], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][23], 0);
+
+    CharacterSubThirdCreator[playerid][24] = CreatePlayerTextDraw(playerid, 428.188262, 225.583374, "mdl-4005:kutu");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][24], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][24], 38.000000, 39.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][24], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][24], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][24], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][24], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][24], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][24], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][24], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][24], 0);
+
+    CharacterSubThirdCreator[playerid][25] = CreatePlayerTextDraw(playerid, 470.987091, 225.583374, "mdl-4005:kutu");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][25], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][25], 38.000000, 39.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][25], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][25], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][25], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][25], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][25], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][25], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][25], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][25], 0);
+
+    CharacterSubThirdCreator[playerid][26] = CreatePlayerTextDraw(playerid, 513.829956, 225.583404, "mdl-4005:kutu");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][26], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][26], 38.000000, 39.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][26], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][26], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][26], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][26], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][26], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][26], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][26], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][26], 0);
+
+    CharacterSubThirdCreator[playerid][27] = CreatePlayerTextDraw(playerid, 423.322845, 218.700180, "mdl-4004:aa7");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][27], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][27], 133.000000, 2.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][27], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][27], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][27], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][27], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][27], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][27], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][27], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][27], 0);
+
+    CharacterSubThirdCreator[playerid][28] = CreatePlayerTextDraw(playerid, 423.322906, 218.700210, "mdl-4004:aa7");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][28], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][28], 2.000000, 20.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][28], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][28], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][28], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][28], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][28], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][28], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][28], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][28], 0);
+
+    CharacterSubThirdCreator[playerid][29] = CreatePlayerTextDraw(playerid, 554.509033, 218.800231, "mdl-4004:aa7");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][29], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][29], 2.000000, 21.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][29], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][29], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][29], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][29], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][29], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][29], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][29], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][29], 0);
+
+    CharacterSubThirdCreator[playerid][30] = CreatePlayerTextDraw(playerid, 429.851074, 236.016693, "FIZIKSEL~n~OZELLIKLER");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][30], 0.196658, 0.940832);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][30], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][30], -2139062017);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][30], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][30], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][30], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][30], 1);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][30], 1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][30], 0);
+
+    CharacterSubThirdCreator[playerid][31] = CreatePlayerTextDraw(playerid, 472.227783, 236.600021, "RUHSAL~n~OZELLIKLER");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][31], 0.196658, 0.940832);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][31], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][31], -2139062017);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][31], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][31], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][31], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][31], 1);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][31], 1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][31], 0);
+
+    CharacterSubThirdCreator[playerid][32] = CreatePlayerTextDraw(playerid, 514.994689, 236.600021, "DIGER~n~OZELLIKLER");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][32], 0.196658, 0.940832);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][32], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][32], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][32], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][32], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][32], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][32], 1);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][32], 1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][32], 0);
+
+    CharacterSubThirdCreator[playerid][33] = CreatePlayerTextDraw(playerid, 450.682312, 355.200408, "mdl-4004:ab9");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][33], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][33], 84.000000, 55.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][33], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][33], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][33], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][33], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][33], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][33], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][33], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][33], 0);
+
+    CharacterSubThirdCreator[playerid][34] = CreatePlayerTextDraw(playerid, 419.713562, 277.117065, "mdl-4005:kutu3");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][34], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][34], 44.000000, 84.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][34], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][34], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][34], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][34], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][34], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][34], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][34], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][34], 0);
+    PlayerTextDrawSetSelectable(playerid, CharacterSubThirdCreator[playerid][34], true);
+
+    CharacterSubThirdCreator[playerid][35] = CreatePlayerTextDraw(playerid, 467.869689, 277.117065, "mdl-4005:kutu3");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][35], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][35], 44.000000, 84.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][35], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][35], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][35], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][35], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][35], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][35], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][35], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][35], 0);
+    PlayerTextDrawSetSelectable(playerid, CharacterSubThirdCreator[playerid][35], true);
+
+    CharacterSubThirdCreator[playerid][36] = CreatePlayerTextDraw(playerid, 516.697570, 277.117065, "mdl-4005:kutu3");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][36], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][36], 44.000000, 84.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][36], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][36], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][36], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][36], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][36], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][36], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][36], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][36], 0);
+    PlayerTextDrawSetSelectable(playerid, CharacterSubThirdCreator[playerid][36], true);
+
+    CharacterSubThirdCreator[playerid][37] = CreatePlayerTextDraw(playerid, 422.323730, 279.899932, "mdl-4005:kutu33");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][37], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][37], 39.000000, 79.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][37], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][37], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][37], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][37], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][37], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][37], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][37], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][37], 0);
+
+    CharacterSubThirdCreator[playerid][38] = CreatePlayerTextDraw(playerid, 469.912933, 279.899932, "mdl-4005:kutu33a");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][38], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][38], 39.830028, 79.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][38], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][38], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][38], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][38], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][38], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][38], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][38], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][38], 0);
+
+    CharacterSubThirdCreator[playerid][39] = CreatePlayerTextDraw(playerid, 518.839050, 279.899932, "mdl-4005:kutu33aa");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][39], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][39], 39.830028, 79.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][39], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][39], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][39], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][39], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][39], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][39], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][39], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][39], 0);
+
+    CharacterSubThirdCreator[playerid][40] = CreatePlayerTextDraw(playerid, 422.582580, 356.516601, "mdl-4005:aba12");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][40], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][40], 50.000000, 56.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][40], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][40], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][40], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][40], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][40], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][40], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][40], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][40], 0);
+
+    CharacterSubThirdCreator[playerid][41] = CreatePlayerTextDraw(playerid, 398.081085, 356.516601, "mdl-4005:aba13");
+    PlayerTextDrawLetterSize(playerid, CharacterSubThirdCreator[playerid][41], 0.000000, 0.000000);
+    PlayerTextDrawTextSize(playerid, CharacterSubThirdCreator[playerid][41], 50.000000, 56.000000);
+    PlayerTextDrawAlignment(playerid, CharacterSubThirdCreator[playerid][41], 1);
+    PlayerTextDrawColor(playerid, CharacterSubThirdCreator[playerid][41], -1);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][41], 0);
+    PlayerTextDrawSetOutline(playerid, CharacterSubThirdCreator[playerid][41], 0);
+    PlayerTextDrawBackgroundColor(playerid, CharacterSubThirdCreator[playerid][41], 255);
+    PlayerTextDrawFont(playerid, CharacterSubThirdCreator[playerid][41], 4);
+    PlayerTextDrawSetProportional(playerid, CharacterSubThirdCreator[playerid][41], 0);
+    PlayerTextDrawSetShadow(playerid, CharacterSubThirdCreator[playerid][41], 0);
+}
+
 stock ShowCharacterCreatorFirstPanel(playerid)
 {
     for(new i = 0; i < MAX_FIRST_CHARACTER_CREATOR_TEXTDRAW; i++)
@@ -1166,7 +1678,7 @@ stock HideCharacterCreatorFirstPanel(playerid)
 
 stock ShowCreatorSubFirstPage(playerid)
 {
-    for(new i = 0; i < MAX_FIRST_CHARACTER_CREATOR_SUBFIRST_TEXTDRAW; i++)
+    for(new i = 0; i < MAX_FIRST_CHARACTER_CREATOR_SUB_TEXTDRAW; i++)
     {
         PlayerTextDrawShow(playerid, CharacterSubFirstCreator[playerid][i]);
     }
@@ -1177,9 +1689,28 @@ stock ShowCreatorSubFirstPage(playerid)
 
 stock HideCreatorSubFirstPage(playerid)
 {
-    for(new i = 0; i < MAX_FIRST_CHARACTER_CREATOR_SUBFIRST_TEXTDRAW; i++)
+    for(new i = 0; i < MAX_FIRST_CHARACTER_CREATOR_SUB_TEXTDRAW; i++)
     {
         PlayerTextDrawHide(playerid, CharacterSubFirstCreator[playerid][i]);
+    }
+}
+
+stock ShowCreatorSubThirdPage(playerid)
+{
+    for(new i = 0; i < MAX_THIRD_CHARACTER_CREATOR_SUB_TEXTDRAW; i++)
+    {
+        PlayerTextDrawShow(playerid, CharacterSubThirdCreator[playerid][i]);
+    }
+
+    wait_ms(150);
+    SelectTextDraw(playerid, 0x6f0407FF);
+}
+
+stock HideCreatorSubThirdPage(playerid)
+{
+    for(new i = 0; i < MAX_THIRD_CHARACTER_CREATOR_SUB_TEXTDRAW; i++)
+    {
+        PlayerTextDrawHide(playerid, CharacterSubThirdCreator[playerid][i]);
     }
 }
 

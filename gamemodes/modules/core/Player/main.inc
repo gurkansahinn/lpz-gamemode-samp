@@ -31,6 +31,7 @@ hook OnPlayerConnect(playerid)
     CreateCharacterPanelTextdraw(playerid);
     CreateCreatorFirstPanel(playerid);
     CreateCreatorSubFirstPage(playerid);
+    CreateCreatorSubThirdPage(playerid);
 
     ResetPVariables(playerid);
 }
@@ -229,6 +230,11 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     {
         HideCreatorSubFirstPage(playerid);
         ShowCharacterCreatorFirstPanel(playerid);
+    }
+    else if(playertextid == CharacterSubFirstCreator[playerid][21]) // Creator sub first page save button.
+    {
+        HideCreatorSubFirstPage(playerid);
+
     }
     return 1;
 }
