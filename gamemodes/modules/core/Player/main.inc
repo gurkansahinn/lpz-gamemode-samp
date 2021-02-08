@@ -29,8 +29,10 @@ hook OnPlayerConnect(playerid)
 	Streamer_ToggleIdleUpdate(playerid, 1);
 
     CreateCharacterPanelTextdraw(playerid);
+
     CreateCreatorFirstPanel(playerid);
     CreateCreatorSubFirstPage(playerid);
+    CreateCreatorSubSecondPage(playerid);
     CreateCreatorSubThirdPage(playerid);
 
     ResetPVariables(playerid);
@@ -233,8 +235,30 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     }
     else if(playertextid == CharacterSubFirstCreator[playerid][21]) // Creator sub first page save button.
     {
-        HideCreatorSubFirstPage(playerid);
+        if(AccountInfo[playerid][pCreatorSkin] == INVALID_PLAYER_ID)
+            return ErrorMessage(playerid, "Karakterin dýþ görünüþünü belirlememiþsin.");
 
+        if(!AccountInfo[playerid][pCreatorColour])
+            return ErrorMessage(playerid, "Karakterin göz rengini belirlememiþsin.");
+
+        if(!AccountInfo[playerid][pCreatorWeight])
+            return ErrorMessage(playerid, "Karakterin kilosunu belirlememiþsin.");
+
+        if(!AccountInfo[playerid][pCreatorHeight])
+            return ErrorMessage(playerid, "Karakterin boyunu belirlememiþsin.");
+
+        HideCreatorSubFirstPage(playerid);
+        ShowCreatorSubSecondPage(playerid);
+    }
+    else if(playertextid == CharacterSubSecondCreator[playerid][51]) // Creator sub second page back button.
+    {
+        HideCreatorSubSecondPage(playerid);
+        ShowCreatorSubFirstPage(playerid);
+    }
+    else if(playertextid == CharacterSubSecondCreator[playerid][21]) // Creator sub second page save button.
+    {
+        HideCreatorSubSecondPage(playerid);
+        ShowCreatorSubThirdPage(playerid);
     }
     return 1;
 }
