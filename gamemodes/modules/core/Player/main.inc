@@ -238,17 +238,121 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
         if(AccountInfo[playerid][pCreatorSkin] == INVALID_PLAYER_ID)
             return ErrorMessage(playerid, "Karakterin dýþ görünüþünü belirlememiþsin.");
 
-        if(!AccountInfo[playerid][pCreatorColour])
-            return ErrorMessage(playerid, "Karakterin göz rengini belirlememiþsin.");
-
         if(!AccountInfo[playerid][pCreatorWeight])
             return ErrorMessage(playerid, "Karakterin kilosunu belirlememiþsin.");
 
         if(!AccountInfo[playerid][pCreatorHeight])
             return ErrorMessage(playerid, "Karakterin boyunu belirlememiþsin.");
 
+        if(!AccountInfo[playerid][pCreatorColour])
+            return ErrorMessage(playerid, "Karakterin göz rengini belirlememiþsin.");
+
         HideCreatorSubFirstPage(playerid);
         ShowCreatorSubSecondPage(playerid);
+    }
+    else if(playertextid == CharacterSubSecondCreator[playerid][42]) // Bencil
+    {
+        if(BitFlag_Get(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_SELFISH))
+        {
+            BitFlag_Off(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_SELFISH);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][34], "mdl-4003:hud6");
+        }
+        else
+        {
+            BitFlag_On(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_SELFISH);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][34], "mdl-4003:hud7");
+        }
+    }
+    else if(playertextid == CharacterSubSecondCreator[playerid][43]) // Tartýþmacý
+    {
+        if(BitFlag_Get(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_DEBATER))
+        {
+            BitFlag_Off(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_DEBATER);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][39], "mdl-4003:hud6");
+        }
+        else
+        {
+            BitFlag_On(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_DEBATER);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][39], "mdl-4003:hud7");
+        }    
+    }
+    else if(playertextid == CharacterSubSecondCreator[playerid][44]) // Baskýn
+    {
+        if(BitFlag_Get(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_OPPRESSIVE))
+        {
+            BitFlag_Off(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_OPPRESSIVE);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][40], "mdl-4003:hud6");
+        }
+        else
+        {
+            BitFlag_On(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_OPPRESSIVE);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][40], "mdl-4003:hud7");
+        }
+    }
+    else if(playertextid == CharacterSubSecondCreator[playerid][45]) // Kuþkucu
+    {
+        if(BitFlag_Get(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_SKEPTICAL))
+        {
+            BitFlag_Off(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_SKEPTICAL);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][41], "mdl-4003:hud6");
+        }
+        else
+        {
+            BitFlag_On(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_SKEPTICAL);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][41], "mdl-4003:hud7");
+        }
+    }
+    else if(playertextid == CharacterSubSecondCreator[playerid][46]) // Arkadaþ Canlýsý
+    {
+        if(BitFlag_Get(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_FRIENDLY))
+        {
+            BitFlag_Off(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_FRIENDLY);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][35], "mdl-4003:hud6");
+        }
+        else
+        {
+            BitFlag_On(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_FRIENDLY);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][35], "mdl-4003:hud7");
+        }
+    }
+    else if(playertextid == CharacterSubSecondCreator[playerid][47]) // Gergin Görünüþlü Adam
+    {
+        if(BitFlag_Get(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_ANGRY))
+        {
+            BitFlag_Off(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_ANGRY);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][36], "mdl-4003:hud6");
+        }
+        else
+        {
+            BitFlag_On(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_ANGRY);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][36], "mdl-4003:hud7");
+        }
+    }
+    else if(playertextid == CharacterSubSecondCreator[playerid][48]) // Utangaç
+    {
+        if(BitFlag_Get(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_SHY))
+        {
+            BitFlag_Off(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_SHY);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][37], "mdl-4003:hud6");
+        }
+        else
+        {
+            BitFlag_On(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_SHY);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][37], "mdl-4003:hud7");
+        }
+    }
+    else if(playertextid == CharacterSubSecondCreator[playerid][49]) // Yansýtýcý
+    {
+        if(BitFlag_Get(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_REFLECTIVE))
+        {
+            BitFlag_Off(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_REFLECTIVE);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][38], "mdl-4003:hud6");
+        }
+        else
+        {
+            BitFlag_On(AccountInfo[playerid][pCreatorSpiritual], CHARACTER_REFLECTIVE);
+            PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][38], "mdl-4003:hud7");
+        }
     }
     else if(playertextid == CharacterSubSecondCreator[playerid][51]) // Creator sub second page back button.
     {
@@ -257,6 +361,9 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     }
     else if(playertextid == CharacterSubSecondCreator[playerid][21]) // Creator sub second page save button.
     {
+        if(!AccountInfo[playerid][pCreatorSpiritual])
+            return ErrorMessage(playerid, "En az bir ruhsal özellik seçmelisin.");
+
         HideCreatorSubSecondPage(playerid);
         ShowCreatorSubThirdPage(playerid);
     }

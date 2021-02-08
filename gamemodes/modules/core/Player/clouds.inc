@@ -25,11 +25,26 @@ enum E_Account {
     Float:pCreatorWeight,
     Float:pCreatorHeight,
 
+    pCreatorSpiritual,
+
     pCameraZoom
 
 }
 
 new AccountInfo[MAX_PLAYERS][E_Account];
+
+// Character Spiritual Features
+enum(<<=1)
+{
+    CHARACTER_SELFISH = 1,
+    CHARACTER_DEBATER,
+    CHARACTER_OPPRESSIVE,
+    CHARACTER_SKEPTICAL,
+    CHARACTER_FRIENDLY,
+    CHARACTER_ANGRY,
+    CHARACTER_SHY,
+    CHARACTER_REFLECTIVE
+}
 
 // State Flags
 enum(<<=1)
