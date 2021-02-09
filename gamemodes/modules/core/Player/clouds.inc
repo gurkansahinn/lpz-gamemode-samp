@@ -26,6 +26,7 @@ enum E_Account {
     Float:pCreatorHeight,
 
     pCreatorSpiritual,
+    pCreatorPhysical,
 
     pCameraZoom
 

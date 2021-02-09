@@ -125,6 +125,8 @@ stock ResetPVariables(playerid)
 
     ResetCreatorFirstData(playerid);
     ResetCreatorSubFirstData(playerid);
+    ResetCreatorSubSecondData(playerid);
+    ResetCreatorSubThirdData(playerid);
 
     SetPlayerColor(playerid, COLOUR_GRAY);
     return 1;

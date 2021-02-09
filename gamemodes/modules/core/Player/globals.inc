@@ -23,4 +23,10 @@
 
 #define INVALID_TIMER_ID (0)
 
+#define CHARACTER_PHYSICAL_INVALID_ID       (0)
+#define CHARACTER_PHYSICAL_FIRST            (1)
+#define CHARACTER_PHYSICAL_SECOND           (2)
+#define CHARACTER_PHYSICAL_THIRD            (3)
+
+// Model Selections
 #define CREATOR_SELECT_SKIN (0)

@@ -430,3 +430,26 @@ stock ResetCreatorSubFirstData(playerid)
     AccountInfo[playerid][pCreatorHeight] = 0;
     PlayerTextDrawSetString(playerid, CharacterSubFirstCreator[playerid][40], "00_CM");
 }
+
+stock ResetCreatorSubSecondData(playerid)
+{
+    AccountInfo[playerid][pCreatorSpiritual] = 0;
+
+    PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][34], "mdl-4003:hud6");
+    PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][35], "mdl-4003:hud6");
+    PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][36], "mdl-4003:hud6");
+    PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][37], "mdl-4003:hud6");
+    PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][38], "mdl-4003:hud6");
+    PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][39], "mdl-4003:hud6");
+    PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][40], "mdl-4003:hud6");
+    PlayerTextDrawSetString(playerid, CharacterSubSecondCreator[playerid][41], "mdl-4003:hud6");
+}
+
+stock ResetCreatorSubThirdData(playerid)
+{
+    AccountInfo[playerid][pCreatorPhysical] = CHARACTER_PHYSICAL_INVALID_ID;
+
+    PlayerTextDrawSetString(playerid, CharacterSubThirdCreator[playerid][34], "mdl-4005:kutu3");
+    PlayerTextDrawSetString(playerid, CharacterSubThirdCreator[playerid][35], "mdl-4005:kutu3");
+    PlayerTextDrawSetString(playerid, CharacterSubThirdCreator[playerid][36], "mdl-4005:kutu3");
+}

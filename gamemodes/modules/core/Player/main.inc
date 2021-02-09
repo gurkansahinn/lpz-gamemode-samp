@@ -152,6 +152,8 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
     {
         ResetCreatorFirstData(playerid);
         ResetCreatorSubFirstData(playerid);
+        ResetCreatorSubSecondData(playerid);
+        ResetCreatorSubThirdData(playerid);
 
         HideCharacterCreatorFirstPanel(playerid);
         CheckPlayerCharacters(playerid); 
@@ -366,6 +368,39 @@ public OnPlayerClickPlayerTextDraw(playerid, PlayerText:playertextid)
 
         HideCreatorSubSecondPage(playerid);
         ShowCreatorSubThirdPage(playerid);
+    }
+    else if(playertextid == CharacterSubThirdCreator[playerid][34]) // Creator first physical.
+    {
+        ResetCreatorSubThirdData(playerid);
+
+        AccountInfo[playerid][pCreatorPhysical] = CHARACTER_PHYSICAL_FIRST;
+        PlayerTextDrawSetString(playerid, CharacterSubThirdCreator[playerid][34], "mdl-4005:kutu");
+    }
+    else if(playertextid == CharacterSubThirdCreator[playerid][35]) // Creator second physical.
+    {
+        ResetCreatorSubThirdData(playerid);
+
+        AccountInfo[playerid][pCreatorPhysical] = CHARACTER_PHYSICAL_SECOND;
+        PlayerTextDrawSetString(playerid, CharacterSubThirdCreator[playerid][35], "mdl-4005:kutu");
+    }
+    else if(playertextid == CharacterSubThirdCreator[playerid][36]) // Creator third physical.
+    {
+        ResetCreatorSubThirdData(playerid);
+
+        AccountInfo[playerid][pCreatorPhysical] = CHARACTER_PHYSICAL_THIRD;
+        PlayerTextDrawSetString(playerid, CharacterSubThirdCreator[playerid][36], "mdl-4005:kutu");
+    }
+    else if(playertextid == CharacterSubThirdCreator[playerid][22]) // Creator sub third page back button.
+    {
+        HideCreatorSubThirdPage(playerid);
+        ShowCreatorSubSecondPage(playerid);
+    }
+    else if(playertextid == CharacterSubThirdCreator[playerid][21]) // Creator sub third page save button.
+    {
+        if(AccountInfo[playerid][pCreatorPhysical] == CHARACTER_PHYSICAL_INVALID_ID)
+            return ErrorMessage(playerid, "Fiziksel özellik seçimi yapmadan devam edemezsin.");
+    
+        HideCreatorSubThirdPage(playerid);
     }
     return 1;
 }
