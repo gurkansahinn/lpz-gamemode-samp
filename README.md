@@ -1,8 +1,10 @@
-# zombie-project
+# (deprecated)
+
+## zombie-project
 
 Last Project Z - Gamemode
 
-# .env file example
+#3 .env file example
 
 ```
 SERVER_NAME=
