@@ -4,7 +4,7 @@
 
 Last Project Z - Gamemode
 
-#3 .env file example
+# .env file example
 
 ```
 SERVER_NAME=
